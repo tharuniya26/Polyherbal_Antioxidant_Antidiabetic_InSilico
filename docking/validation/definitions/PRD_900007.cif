@@ -1,0 +1,74 @@
+data_PRD_900007
+# 
+_pdbx_reference_molecule.prd_id                       PRD_900007 
+_pdbx_reference_molecule.name                         alpha-acarbose 
+_pdbx_reference_molecule.represent_as                 branched 
+_pdbx_reference_molecule.type                         Oligosaccharide 
+_pdbx_reference_molecule.type_evidence_code           ? 
+_pdbx_reference_molecule.class                        inhibitor 
+_pdbx_reference_molecule.class_evidence_code          ? 
+_pdbx_reference_molecule.formula                      "C25 H43 N O18" 
+_pdbx_reference_molecule.formula_weight               645.605 
+_pdbx_reference_molecule.chem_comp_id                 ? 
+_pdbx_reference_molecule.release_status               REL 
+_pdbx_reference_molecule.replaces                     ? 
+_pdbx_reference_molecule.replaced_by                  ? 
+_pdbx_reference_molecule.compound_details             ? 
+_pdbx_reference_molecule.description                  oligosaccharide 
+_pdbx_reference_molecule.representative_PDB_id_code   3WEO 
+# 
+_pdbx_reference_entity_list.prd_id          PRD_900007 
+_pdbx_reference_entity_list.ref_entity_id   1 
+_pdbx_reference_entity_list.component_id    1 
+_pdbx_reference_entity_list.type            branched 
+_pdbx_reference_entity_list.details         ? 
+# 
+_pdbx_reference_entity_poly.prd_id          PRD_900007 
+_pdbx_reference_entity_poly.ref_entity_id   1 
+_pdbx_reference_entity_poly.type            oligosaccharide 
+_pdbx_reference_entity_poly.db_code         ? 
+_pdbx_reference_entity_poly.db_name         ? 
+# 
+_pdbx_reference_entity_sequence.prd_id          PRD_900007 
+_pdbx_reference_entity_sequence.ref_entity_id   1 
+_pdbx_reference_entity_sequence.type            saccharide 
+_pdbx_reference_entity_sequence.NRP_flag        N 
+# 
+loop_
+_pdbx_reference_entity_poly_seq.prd_id 
+_pdbx_reference_entity_poly_seq.ref_entity_id 
+_pdbx_reference_entity_poly_seq.num 
+_pdbx_reference_entity_poly_seq.mon_id 
+_pdbx_reference_entity_poly_seq.parent_mon_id 
+_pdbx_reference_entity_poly_seq.hetero 
+_pdbx_reference_entity_poly_seq.observed 
+PRD_900007 1 1 GLC ? N Y 
+PRD_900007 1 2 GLC ? N Y 
+PRD_900007 1 3 AC1 ? N Y 
+# 
+loop_
+_pdbx_reference_entity_poly_link.prd_id 
+_pdbx_reference_entity_poly_link.ref_entity_id 
+_pdbx_reference_entity_poly_link.component_id 
+_pdbx_reference_entity_poly_link.link_id 
+_pdbx_reference_entity_poly_link.atom_id_1 
+_pdbx_reference_entity_poly_link.comp_id_1 
+_pdbx_reference_entity_poly_link.entity_seq_num_1 
+_pdbx_reference_entity_poly_link.atom_id_2 
+_pdbx_reference_entity_poly_link.comp_id_2 
+_pdbx_reference_entity_poly_link.entity_seq_num_2 
+_pdbx_reference_entity_poly_link.value_order 
+_pdbx_reference_entity_poly_link.details 
+_pdbx_reference_entity_poly_link.insert_code_1 
+_pdbx_reference_entity_poly_link.insert_code_2 
+PRD_900007 1 1 1 O4 GLC 1 C1 GLC 2 SING ? ? ? 
+PRD_900007 1 1 2 O4 GLC 2 C1 AC1 3 SING ? ? ? 
+# 
+loop_
+_pdbx_prd_audit.prd_id 
+_pdbx_prd_audit.date 
+_pdbx_prd_audit.processing_site 
+_pdbx_prd_audit.action_type 
+PRD_900007 2020-05-08 RCSB "Create molecule" 
+PRD_900007 2020-07-29 RCSB "Initial release" 
+# 
