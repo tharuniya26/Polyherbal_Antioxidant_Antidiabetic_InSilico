@@ -1,0 +1,12 @@
+{
+    "ambiguous": {
+        "PCA": ["PCA"]
+    },
+    "residue_templates": {
+        "PCA": {
+            "smiles": "[H]N1C(=O)C([H])([H])C([H])([H])[C@@]1([H])C=O",
+            "atom_name": ["H", "N", "CD", "OE", "CG", "HG2", "HG3", "CB", "HB2", "HB3", "CA", "HA", "C", "O"],
+            "link_labels": {"12": "C-term"}
+        }
+    }
+}

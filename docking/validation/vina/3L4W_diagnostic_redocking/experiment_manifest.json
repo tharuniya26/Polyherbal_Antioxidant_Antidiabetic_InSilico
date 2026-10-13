@@ -1,0 +1,65 @@
+{
+  "experiment": "3L4W neutral-MIG no-NAG dry/HID diagnostic redocking",
+  "created_UTC": "2026-10-12T18:31:42.823080+00:00",
+  "vina_version": "1.2.7",
+  "rdkit_version": "2026.03.6",
+  "meeko_version": "0.8.0",
+  "python_version": "3.12.10",
+  "vina_executable": "E:\\docking tools\\vina_1.2.7_win.exe",
+  "vina_executable_SHA256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "audited_input_SHA256": {
+    "structures\\proteins\\prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity.pdb": "3afebaeab24dfea3407446b653711cbc40ed1875eedc83e7e877d0512fe91f8e",
+    "structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+    "docking\\validation\\vina\\3L4W_MIG_native_pose.sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+    "docking\\validation\\vina\\3L4W_MIG_crystal_pose_reference.pdbqt": "c7417f6bcb661e0f2217c6ba3619b6fd6c03ffb029fe5840d4b0d13c1bf16169",
+    "docking\\validation\\vina\\3L4W_MIG_sdf_to_pdbqt_atom_map.csv": "68c9254203234c64557de148d64e161e2a4cf972c3f1e156e3b9658a0c8fcd50",
+    "docking\\validation\\vina\\3L4W_MIG_atom_map.csv": "ff1c77265befde60237c5a1fc129172b40620c9f45beeb264679f25180729df9",
+    "structures\\proteins\\original\\3L4W.pdb": "57638e45666e2f848e37691a914a978d85c377c13eaed9e5f94af24d2c52c95e"
+  },
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "cpu_per_run": 1,
+  "exhaustiveness": 32,
+  "num_modes": 20,
+  "energy_range_kcal_mol": 5.0,
+  "min_rmsd_A": 1.0,
+  "box_center_A": [
+    45.38664285714285,
+    92.35157142857143,
+    34.821999999999996
+  ],
+  "box_dimensions_A": [
+    24,
+    18,
+    18
+  ],
+  "box_derivation": {
+    "ligand_extrema_A": {
+      "min": [
+        42.501,
+        89.475,
+        32.147
+      ],
+      "max": [
+        48.486,
+        94.054,
+        36.873
+      ]
+    },
+    "site_max_axis_deviation_A": [
+      6.580357142857146,
+      3.559571428571431,
+      3.8249999999999957
+    ],
+    "margin_rule": "centroid of deposited MIG heavy atoms; five Angstrom beyond all MIG heavy atoms and Asp443/Asp542/His600 catalytic side-chain heavy atoms; round each half-extent up to an integer"
+  },
+  "atom_map": "docking\\validation\\vina\\3L4W_MIG_sdf_to_pdbqt_atom_map.csv",
+  "chemical_automorphisms": 1,
+  "starting_pose_method": "NumPy PCG64(seed) rigid quaternion rotation plus +/-3 A translation; at least 5 A unmapped crystal-frame RMSD; no atom/bond/protonation changes. Vina global_search uses independent randomized starts and --seed controls its Monte Carlo generator.",
+  "receptor_model_limit": "No-NAG local sensitivity; Asp443-/Asp542-/His600-HID; dry; not full glycan-retaining validation"
+}

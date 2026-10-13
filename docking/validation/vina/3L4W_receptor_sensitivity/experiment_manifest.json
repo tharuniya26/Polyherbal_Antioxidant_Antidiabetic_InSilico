@@ -1,0 +1,58 @@
+{
+  "created_UTC": "2026-10-12T19:39:44.775415+00:00",
+  "experiment": "3L4W D542H(OD2) dry no-NAG receptor microstate sensitivity",
+  "receptor_model": "structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542H_OD2_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt",
+  "receptor_QC": {
+    "H_coordinate_A": [
+      47.20782039130006,
+      88.63788596913929,
+      33.43698270583812
+    ],
+    "CG_OD2_HD2_angle_deg": 112.15534347773468,
+    "min_new_H_to_other_protein_A": 3.4127294898569787,
+    "min_new_H_to_MIG_A": {
+      "neutral": 2.5550417911871977,
+      "charged": 2.5550417911871977
+    },
+    "D542_PDBQT_charge": 0.0,
+    "receptor_atom_count": 8429,
+    "protein_heavy_atom_count": 6912,
+    "ASH_template_SHA256": "535dc75a2cc5db579a3114090c9ab1273892c556cb7cc1a850ce2c4cd57c7cde",
+    "D443_PDBQT_charge": -1.0,
+    "H600_PDBQT_charge": -1.4901161193847656e-08,
+    "Vina_parse_probe": "neutral and charged MIG reached deliberate zero-grid guard; no scoring/docking",
+    "Meeko_command": "mk_prepare_receptor.exe --read_pdb <temporary variant.pdb> --write_pdbqt <temporary variant.pdbqt> --set_template A:542=ASH",
+    "new_PDB_SHA256": "8e0872b236cb6975dc81ef131ffd3aacddbd8edd3bbc178e45eb1a18710192fd",
+    "new_PDBQT_SHA256": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd"
+  },
+  "baseline_receptor_SHA256": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+  "native_reference_SHA256": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+  "Vina_executable_SHA256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "Vina_version": "1.2.7",
+  "OpenMM_version": "8.6.1",
+  "Meeko_version": "0.8.0",
+  "RDKit_version": "2026.03.6",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "box_center_A": [
+    45.38664285714285,
+    92.35157142857143,
+    34.821999999999996
+  ],
+  "box_size_A": [
+    24,
+    18,
+    18
+  ],
+  "exhaustiveness": 64,
+  "num_modes": 20,
+  "energy_range_kcal_mol": 5.0,
+  "min_rmsd_A": 1.0,
+  "cpu": 1,
+  "model_limit": "No NAG, no waters, Asp542 OH orientation ligand-free provisional; catalytic chemistry not experimentally assigned"
+}

@@ -1,0 +1,15 @@
+sdf_atom_index_1based,PDB_serial,auth_atom_name,pdbqt_atom_serial
+1,7007,OAA,9
+2,7008,OAB,12
+3,7009,OAC,14
+4,7010,OAD,18
+5,7011,OAE,16
+6,7012,CAF,8
+7,7013,CAG,11
+8,7014,CAH,7
+9,7015,CAI,1
+10,7016,CAJ,2
+11,7017,CAK,3
+12,7018,CAL,4
+13,7019,CAM,5
+14,7020,NAN,6

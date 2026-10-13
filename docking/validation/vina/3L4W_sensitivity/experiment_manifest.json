@@ -1,0 +1,48 @@
+{
+  "created_UTC": "2026-10-12T18:52:30.311068+00:00",
+  "experiment": "3L4W/MIG E64 convergence and amine-protonation sensitivity",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "vina_version": "1.2.7",
+  "vina_executable_SHA256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "rdkit_version": "2026.03.6",
+  "meeko_version": "0.8.0",
+  "python_version": "3.12.10",
+  "primary_input_SHA256": {
+    "structures\\proteins\\prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity.pdb": "3afebaeab24dfea3407446b653711cbc40ed1875eedc83e7e877d0512fe91f8e",
+    "structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+    "docking\\validation\\vina\\3L4W_MIG_native_pose.sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+    "docking\\validation\\vina\\3L4W_MIG_crystal_pose_reference.pdbqt": "c7417f6bcb661e0f2217c6ba3619b6fd6c03ffb029fe5840d4b0d13c1bf16169",
+    "docking\\validation\\vina\\3L4W_MIG_sdf_to_pdbqt_atom_map.csv": "68c9254203234c64557de148d64e161e2a4cf972c3f1e156e3b9658a0c8fcd50",
+    "docking\\validation\\vina\\3L4W_MIG_atom_map.csv": "ff1c77265befde60237c5a1fc129172b40620c9f45beeb264679f25180729df9",
+    "structures\\proteins\\original\\3L4W.pdb": "57638e45666e2f848e37691a914a978d85c377c13eaed9e5f94af24d2c52c95e"
+  },
+  "charged_SDF_SHA256": "3cc80711a2ab1903644ec070991f2b622f783bdab02ab44b4b98f234d25ed345",
+  "charged_PDBQT_SHA256": "f26f2815febfeee754bbc1d5ef0663f5d83c22d56e18d0c158ee071ea15f992d",
+  "box_center_A": [
+    45.38664285714285,
+    92.35157142857143,
+    34.821999999999996
+  ],
+  "box_size_A": [
+    24,
+    18,
+    18
+  ],
+  "exhaustiveness": 64,
+  "num_modes": 20,
+  "energy_range_kcal_mol": 5.0,
+  "min_rmsd_A": 1.0,
+  "cpu": 1,
+  "excluded_variants": {
+    "sitewaters": "Static-water orientation and exchange unsupported for standard rigid Vina scoring",
+    "glycan_retained": "No validated Meeko glycan template",
+    "Asp542_protonated": "No prepared, audited receptor variant",
+    "His600_HIE_or_HIP": "HIE trial had local hydrogen clash; HIP automatic state not justified"
+  }
+}
