@@ -1,0 +1,8 @@
+{
+  "reason": "The interactive command session ended when a new user message arrived while two seed-4404 Vina processes were active. Both processes then disappeared. Neither had written a finalized Vina output or runner log. Their exit codes and elapsed runtimes were not captured; they are unconfirmed, not successful or scored attempts.",
+  "observation": "After interruption, no vina_1.2.7_win.exe processes remained and only the six seed-1101/2202/3303 output-log pairs existed. The two seed-4404 attempts used the frozen Step 66 start and receptor files under the same command generator in scripts/run_vina_3L4W_agnuside_pilot.py.",
+  "attempts": [
+    {"seed": 4404, "receptor_state": "Asp542-", "status": "interrupted_exit_unconfirmed_no_output", "retry_policy": "same frozen inputs and settings; preserve this record"},
+    {"seed": 4404, "receptor_state": "Asp542H(OD2)", "status": "interrupted_exit_unconfirmed_no_output", "retry_policy": "same frozen inputs and settings; preserve this record"}
+  ]
+}

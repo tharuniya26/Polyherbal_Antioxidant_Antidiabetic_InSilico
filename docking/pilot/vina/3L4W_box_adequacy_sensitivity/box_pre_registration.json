@@ -1,0 +1,61 @@
+{
+  "added_clearance_per_face_A": [
+    3.0,
+    3.0,
+    3.0
+  ],
+  "cpu": 1,
+  "decision": "RUN_ONE_CENTERED_LARGER_BOX_COMPARISON",
+  "deposited_MIG_bbox_max_A": [
+    48.486,
+    94.054,
+    36.873
+  ],
+  "deposited_MIG_bbox_min_A": [
+    42.501,
+    89.475,
+    32.147
+  ],
+  "energy_range": 5.0,
+  "exhaustiveness": 64,
+  "expected_min_clearance_if_old_rank1_coordinates_unchanged_A": 3.1154285699999917,
+  "frozen_input_manifest_sha256": "58c41e3b863cf722677c6429e9af126465333479ee3f3f6c867ef77dd26740fa",
+  "min_rmsd": 1.0,
+  "new_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "new_size_A": [
+    30.0,
+    24.0,
+    24.0
+  ],
+  "num_modes": 20,
+  "old_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "old_face_audit_sha256": "90e0a14f5bc770cd5542cbaf93f9ca21b914d1de987a453fc87b47048fb5f948",
+  "old_pose_metrics_sha256": "47e6050463e925a2b25a356f4811ef6204f876a9fbf489d88e075a918b18646a",
+  "old_rank1_min_clearance_A": 0.11542856999999174,
+  "old_results_sha256": "3013ea034a710d23e043e4288caf98d7a78266fa9fc7a505e6a1330912145c47",
+  "old_size_A": [
+    24.0,
+    18.0,
+    18.0
+  ],
+  "reason": "Independent audit: 36/40 rank-1 and 685/781 modes within 1 A of an original face; all 40 rank-1 limiting faces are y-minus. Extend each face by 3 A without moving the deposited MIG centroid, changing the pocket rule, or using docking scores.",
+  "registered_before_vina": true,
+  "scoring": "vina",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "software": "AutoDock Vina 1.2.7, Meeko 0.8.0, RDKit",
+  "vina_executable_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5"
+}

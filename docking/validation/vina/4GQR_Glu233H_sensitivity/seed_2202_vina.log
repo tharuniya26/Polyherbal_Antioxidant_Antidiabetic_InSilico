@@ -1,0 +1,69 @@
+COMMAND: "E:\docking tools\vina_1.2.7_win.exe" --receptor E:\Polyherbal_Antioxidant_Antidiabetic_InSilico\docking\validation\vina\4GQR_Glu233H_sensitivity\4GQR_dry_noNAG_Glu233H_OE2_pH7p5_Meeko0.8.0.pdbqt --ligand E:\Polyherbal_Antioxidant_Antidiabetic_InSilico\docking\validation\vina\4GQR_Glu233H_sensitivity\seed_2202_randomized_start.pdbqt --center_x 13.44317391 --center_y 15.13530435 --center_z 39.43613043 --size_x 26 --size_y 24 --size_z 28 --scoring vina --exhaustiveness 64 --num_modes 20 --energy_range 5.0 --min_rmsd 1.0 --seed 2202 --cpu 1 --out E:\Polyherbal_Antioxidant_Antidiabetic_InSilico\docking\validation\vina\4GQR_Glu233H_sensitivity\seed_2202_docked.pdbqt --verbosity 1
+SEED: 2202
+RECEPTOR_SHA256: 8f85706775f8750f4689b4c6e33b28623a302d40ebaaef278838e9541e1c5fd3
+LIGAND_SHA256: e7e0dc29c4662b24fcf45c0709066cbb307fe36d519d1a25b2a828d09cd4120c
+START_SHA256: 2a6325c4938fda2c662f057b924cdb8bdb71bbc7a54bbc6b7e687332ab95d4b5
+EXIT_CODE: 0
+ELAPSED_SECONDS: 543.531
+--- STDOUT ---
+AutoDock Vina v1.2.7
+#################################################################
+# If you used AutoDock Vina in your work, please cite:          #
+#                                                               #
+# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #
+# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #
+# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #
+# DOI 10.1021/acs.jcim.1c00203                                  #
+#                                                               #
+# O. Trott, A. J. Olson,                                        #
+# AutoDock Vina: improving the speed and accuracy of docking    #
+# with a new scoring function, efficient optimization and       #
+# multithreading, J. Comp. Chem. (2010)                         #
+# DOI 10.1002/jcc.21334                                         #
+#                                                               #
+# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #
+# more information.                                             #
+#################################################################
+
+Scoring function : vina
+Rigid receptor: E:\Polyherbal_Antioxidant_Antidiabetic_InSilico\docking\validation\vina\4GQR_Glu233H_sensitivity\4GQR_dry_noNAG_Glu233H_OE2_pH7p5_Meeko0.8.0.pdbqt
+Ligand: E:\Polyherbal_Antioxidant_Antidiabetic_InSilico\docking\validation\vina\4GQR_Glu233H_sensitivity\seed_2202_randomized_start.pdbqt
+Grid center: X 13.4432 Y 15.1353 Z 39.4361
+Grid size  : X 26 Y 24 Z 28
+Grid space : 0.375
+Exhaustiveness: 64
+CPU: 1
+Verbosity: 1
+
+Computing Vina grid ... done.
+Performing docking (random seed: 2202) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -7.739          0          0
+   2        -7.73     0.1266      1.731
+   3       -7.687     0.9694       2.05
+   4       -7.521      1.799      3.203
+   5       -7.479      1.669      7.021
+   6       -7.473      1.681      6.962
+   7       -7.132      1.855      6.709
+   8         -7.1      1.605      3.279
+   9       -7.014      1.714      6.722
+  10       -6.998      2.029      6.654
+  11       -6.964       1.65      3.033
+  12       -6.961      2.002      2.684
+  13       -6.842      2.307      3.817
+  14       -6.767      3.143       5.65
+  15       -6.759      1.288      6.795
+  16       -6.707      1.474      6.759
+  17       -6.694      2.919      5.427
+  18       -6.688      1.959      6.992
+  19       -6.668      1.984      7.074
+  20       -6.666      2.835      5.358
+
+--- STDERR ---
+

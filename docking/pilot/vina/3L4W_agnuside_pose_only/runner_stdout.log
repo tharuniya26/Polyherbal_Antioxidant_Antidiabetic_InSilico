@@ -1,0 +1,28 @@
+Preflight PASS: 10/10 Vina input/grid parse checks, Step 66 hashes, 10/10 native-MIG controls
+Asp542H(OD2) seed 1101: completed
+Asp542- seed 1101: completed
+Asp542H(OD2) seed 2202: completed
+Asp542- seed 2202: completed
+Asp542- seed 3303: completed
+Asp542H(OD2) seed 3303: completed
+Asp542H(OD2) seed 4404: completed
+Asp542- seed 4404: completed
+Asp542H(OD2) seed 5505: completed
+Asp542- seed 5505: completed
+{
+  "completed_runs": 10,
+  "failed_runs": 0,
+  "returned_modes": 200,
+  "decisions": {
+    "Asp542-": {
+      "status": "INCONCLUSIVE",
+      "passing_rank1_of_5": 0,
+      "medoid_seed": 4404
+    },
+    "Asp542H(OD2)": {
+      "status": "INCONCLUSIVE",
+      "passing_rank1_of_5": 0,
+      "medoid_seed": 2202
+    }
+  }
+}

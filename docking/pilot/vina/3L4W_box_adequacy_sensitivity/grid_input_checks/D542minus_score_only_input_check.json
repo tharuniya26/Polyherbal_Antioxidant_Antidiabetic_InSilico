@@ -1,0 +1,31 @@
+{
+  "command": [
+    "E:\\docking tools\\vina_1.2.7_win.exe",
+    "--receptor",
+    "E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt",
+    "--ligand",
+    "E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\ligands\\vina_prepared\\LIG04_CID5281647_neutral_reference.pdbqt",
+    "--center_x",
+    "45.38664286",
+    "--center_y",
+    "92.35157143",
+    "--center_z",
+    "34.82200000",
+    "--size_x",
+    "30",
+    "--size_y",
+    "24",
+    "--size_z",
+    "24",
+    "--scoring",
+    "vina",
+    "--score_only",
+    "--cpu",
+    "1"
+  ],
+  "return_code": 1,
+  "elapsed_seconds": 2.77,
+  "stdout": "AutoDock Vina v1.2.7\n#################################################################\n# If you used AutoDock Vina in your work, please cite:          #\n#                                                               #\n# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #\n# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #\n# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #\n# DOI 10.1021/acs.jcim.1c00203                                  #\n#                                                               #\n# O. Trott, A. J. Olson,                                        #\n# AutoDock Vina: improving the speed and accuracy of docking    #\n# with a new scoring function, efficient optimization and       #\n# multithreading, J. Comp. Chem. (2010)                         #\n# DOI 10.1002/jcc.21334                                         #\n#                                                               #\n# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #\n# more information.                                             #\n#################################################################\n\nScoring function : vina\nRigid receptor: E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542m_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt\nLigand: E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\ligands\\vina_prepared\\LIG04_CID5281647_neutral_reference.pdbqt\nGrid center: X 45.3866 Y 92.3516 Z 34.822\nGrid size  : X 30 Y 24 Z 24\nGrid space : 0.375\nExhaustiveness: 8\nCPU: 1\nVerbosity: 1\n\nComputing Vina grid ... done.\n",
+  "stderr": "\n\nAn error occurred: \n\nVina runtime error: The ligand is outside the grid box. Increase the size of the grid box or center it accordingly around the ligand.\n. \n\nPlease report bugs through the Issue Tracker on GitHub \n(https://github.com/ccsb-scripps/AutoDock-Vina/issues)., so\nthat this problem can be resolved. The reproducibility of the\nerror may be vital, so please remember to include the following in\nyour problem report:\n* the EXACT error message,\n* your version of the program,\n* the type of computer system you are running it on,\n* all command line options,\n* configuration file (if used),\n* ligand file as PDBQT,\n* receptor file as PDBQT,\n* flexible side chains file as PDBQT (if used),\n* output file as PDBQT (if any),\n* input (if possible),\n* random seed the program used (this is printed when the program starts).\n\nThank you!\n",
+  "purpose": "grid and input parse only; score uninterpreted"
+}

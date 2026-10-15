@@ -1,0 +1,61 @@
+{
+  "all_pose_csv": "docking/pilot/vina/3L4W_agnuside_pose_only/all_pose_metrics.csv",
+  "all_pose_sha256": "882124562c5d0d4c6bf9fbcc5c8849822913f777fb4a17c187a29d058017e05a",
+  "box_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "box_size_A": [
+    30.0,
+    24.0,
+    24.0
+  ],
+  "completed_runs": 10,
+  "cpu_per_process": 1,
+  "decisions": {
+    "Asp542-": {
+      "medoid_seed": 4404,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "Asp542H(OD2)": {
+      "medoid_seed": 2202,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    }
+  },
+  "energy_range": 5.0,
+  "exhaustiveness": 64,
+  "experiment": "Step 67 LIG09 agnuside reference pose-only",
+  "failed_runs": 0,
+  "frozen_manifest": "data/metadata/vina_3L4W_agnuside_pilot_manifest.csv",
+  "frozen_manifest_sha256": "1fbba07b7b68d1ffd3417e97d6c1ee56aa18198b97fa55a89ebd9accc8613ac5",
+  "interrupted_attempt_count": 2,
+  "interrupted_attempts_path": "docking/pilot/vina/3L4W_agnuside_pose_only/interrupted_attempts.json",
+  "interrupted_attempts_sha256": "e5ec6ee278208db7903fbf3d2cb3b485571b33575e3fbe5e202fe0ab75816759",
+  "max_parallel_processes": 2,
+  "min_rmsd": 1.0,
+  "native_MIG_control_sha256": "9626a145b87c6429e15fd352c53add96e31c9bdb4a3ec3fccc9d058bee7fed09",
+  "num_modes": 20,
+  "original_pdb_waters_sha256": "57638e45666e2f848e37691a914a978d85c377c13eaed9e5f94af24d2c52c95e",
+  "preflight_path": "docking/pilot/vina/3L4W_agnuside_pose_only/vina_pair_parse_preflight.json",
+  "preflight_sha256": "574e05f3ad50e8247f2ed0ef6169ee0a2055f3ec72a94e17b1090b5cb0e91180",
+  "results_csv": "data/metadata/vina_3L4W_agnuside_pilot_results.csv",
+  "results_sha256": "ad7e04f3c6aa94e49f2f2b3da858ba6e1fd3c8157fb177087177bcc3cafe0008",
+  "returned_modes": 200,
+  "scoring": "vina",
+  "script": "scripts/run_vina_3L4W_agnuside_pilot.py",
+  "script_sha256": "80787079faf011e2673152f7b4a24753b2f43a3be50b665862eb8b7620c01620",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "validator_sha256": "fe3ebbc0ee764571bb48fb1057f272a1efe2e65c046eb4827cdf0979bc12a20c",
+  "vina_path": "E:\\docking tools\\vina_1.2.7_win.exe",
+  "vina_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "vina_version": "1.2.7"
+}

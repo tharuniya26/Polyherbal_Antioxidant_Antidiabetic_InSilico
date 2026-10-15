@@ -1,0 +1,45 @@
+# AutoDock Vina target-validation summary
+
+**Step 56, 13 October 2026.** This is a read-only consolidation of completed native-ligand diagnostic experiments. The [machine-readable summary](../../data/metadata/vina_target_validation_summary.csv) links every condition to its unmodified results CSV. A rank-1, crystal-frame, symmetry-aware heavy-atom RMSD **≤2.0 Å** was the prespecified *pose-recovery screen*. Passing it is narrower than validating binding energetics, biochemical inhibition, or phytochemical activity.
+
+## Reconciliation with recorded outputs
+
+All **40 prespecified docking runs** in the six source results CSVs are marked completed, with **0 run failures**. Their logged receptor, ligand/reference, randomized-start, output and log paths match the recorded SHA256 hashes. The CSVs contain **791 returned poses** across eight conditions; `num_modes=20` was a requested maximum, so 18- and 19-mode runs are valid. The relevant E32, E64, ligand-microstate and receptor-microstate reports agree with their numeric run tables. The 3L4W tests involve **14-heavy-atom MIG**; the 4GQR tests involve **23-heavy-atom MYC**. Their RMSDs are target-specific and must not be compared as affinities.
+
+| Complex and case | Receptor and native ligand | Runs | Rank-1 ≤2 Å | Rank-1 RMSD range (Å) | Best returned RMSD (Å), rank |
+| --- | --- | ---: | ---: | ---: | ---: |
+| [3L4W/MIG](https://www.rcsb.org/structure/3L4W) E32 | Dry/no-NAG, Asp443−/Asp542−/His600-HID; neutral MIG | 5/5 | **5/5** | 1.8629–1.8849 | 0.6806, 2 |
+| 3L4W E64 convergence | Same receptor; neutral MIG | 5/5 | **5/5** | 1.8629–1.8849 | 0.6806, 2 |
+| 3L4W ligand sensitivity E64 | Same receptor; modeled amine-+1 MIG | 5/5 | **5/5** | 1.8302–1.8759 | 0.6136, 2 |
+| 3L4W receptor sensitivity E64 | Dry/no-NAG, Asp443−/Asp542H(OD2)/His600-HID; neutral MIG | 5/5 | **5/5** | 1.8632–1.8916 | 0.6813, 2 |
+| 3L4W combined microstate E64 | Same Asp542H(OD2) receptor; modeled amine-+1 MIG | 5/5 | **5/5** | 1.8302–1.8759 | 0.6136, 2 |
+| [4GQR/MYC](https://www.rcsb.org/structure/4GQR) E32 | Dry/no-NAG, Ca/Cl/PCA, Glu233−; neutral MYC | 5/5 | **0/5** | 2.4926–2.5601 | 1.5328, **17** |
+| 4GQR E64 convergence | Same receptor and ligand | 5/5 | **0/5** | 2.4913–2.5650 | 2.1103, 3 |
+| 4GQR Glu233H(OE2) E64 | Same dry model except Glu233H; neutral MYC | 5/5 | **0/5** | 2.4784–2.5537 | 2.1146, 3 |
+
+The **3L4W result is consistent native-MIG rank-1 pose recovery within the tested local models**. E32-to-E64 neutral search convergence and the neutral/amine-+1 ligand comparison are documented in the [initial report](vina_3L4W_redocking_report.md) and [validation assessment](vina_3L4W_validation_assessment.md). Asp542− versus Asp542H(OD2) results are documented in the [receptor-sensitivity report](vina_3L4W_receptor_sensitivity.md). The more crystal-like MIG mode near 0.6–0.7 Å usually ranked **second**, notably in all amine-+1 runs. This is a score-ordering warning despite the 5/5 rank-1 screen. The essentially unchanged charged-MIG result between the two Asp542 states is a limited response of this scoring setup, not evidence that physical protonation is irrelevant.
+
+The **4GQR result is a failed native-MYC validation**. The isolated E32 seed-5505 pose at 1.5328 Å was rank 17, and neither E64 nor the one-variable Glu233H E64 follow-up recovered a sub-2 Å rank-1 pose. The [E32 report](vina_4GQR_redocking_report.md), [E64 assessment](vina_4GQR_convergence_assessment.md), [reference/chemistry investigation](vina_4GQR_failure_investigation.md), and [Glu233H report](vina_4GQR_glu233_sensitivity_report.md) support **suspending the current 4GQR standard-Vina receptor for production phytochemical docking**. Further exhaustiveness tuning is not justified by this evidence. MYC has 0.40 deposited occupancy and weak local density-fit/geometry indicators in the [official validation record](https://www.rcsb.org/ligand-validation/4gqr/MYC); standard Vina input acceptance also does not validate retained Ca/Cl coordination or electrostatics ([Vina FAQ](https://autodock-vina.readthedocs.io/en/stable/faq.html)).
+
+## Documentation and evidence distinctions
+
+No numerical inconsistency was found in the completed run tables or the summarized RMSD conclusions. Some earlier, dated documents use language that is now superseded: the initial 3L4W report calls for an E64 test that has been completed; the 3L4W E64 assessment says no Asp542H receptor was yet validated, whereas the later receptor-sensitivity report documents it; the Step 54 4GQR investigation proposes the Glu233H experiment now completed. The repository [README](../../README.md) still describes in-silico work as wholly planned and says no target/structure files exist. Those are **documentation-status inconsistencies**, not conflicting experimental outcomes; this consolidation does not edit the earlier records.
+
+The original project compared **aqueous leaf extracts** and three formulations in [the configuration](../../config/formulations.yaml). It recorded phytochemical screening, TPC/TFC/TAC, DPPH, ABTS, glucose adsorption and yeast glucose uptake, but no named compound was analytically confirmed in the project's actual aqueous extracts. No original assay directly measured MIG or MYC docking, nor target inhibition by an individual candidate. The current [ligand library](../../data/compounds/final_preliminary_ligand_library.csv) has **10 assigned unique reference structures across 11 plant–compound associations**, plus **one unresolved Aegle kaempferol-rutinoside association** without an assigned structure. Rutin is one chemical structure associated with both Aegle and Senna. All ten [preliminary Vina ligand PDBQTs](../../data/metadata/vina_ligand_preparation_results.csv) pass file/graph/stereo readback, but each explicitly still needs **docking-specific microstate review**. The library is a literature-supported hypothesis set, not a chromatographic profile of the original formulations.
+
+| Plant | Assigned reference structures and botanical-evidence boundary |
+| --- | --- |
+| *Aegle marmelos* | Gallic acid and rutin: leaf literature uses organic solvents; water-only occurrence in the original extract unverified. Tentative kaempferol-rutinoside remains an identity hold. |
+| *Boerhavia diffusa* | PubChem trans-caffeic acid is a conditional reference: underivatized water evidence comes from mixed aerial parts; methanolic-leaf GC-MS reports a tri-TMS derivative, and source E/Z identity is unresolved. |
+| *Salacia reticulata* | Mangiferin and epicatechin have published water-leaf analytical evidence; the exact PubChem epicatechin optical isomer and some source-level sugar stereochemistry remain conditional. |
+| *Senna auriculata* | Quercetin, kaempferol, luteolin, rutin and nicotiflorin are literature leaf candidates from aqueous-organic/other organic extraction; water-only leaf recovery in this project is unverified. |
+| *Vitex negundo* | Agnuside is a conditional leaf candidate; full water-only analytical detail was not verified, and the PubChem stereochemistry is a reference model. |
+
+PubChem identity and a prepared 3D ligand establish a **chemical reference**, not botanical occurrence in the original mixture or predicted binding. A future docking pose would establish neither occurrence nor activity. The formulation ratios are extract proportions, not concentrations of these ten chemicals; C1 and C2 contain all five plants, whereas C3 contains Senna, Salacia and Vitex only.
+
+## Target decisions and next phase
+
+- **3L4W ntMGAM:** **Conditionally ready for a limited, hypothesis-generating pose-placement pilot**, subject to the specific gates in [the production-readiness assessment](vina_3L4W_production_readiness.md). **Not ready for production potency ranking or a claim of fully validated glycosylated receptor chemistry.**
+- **4GQR pancreatic α-amylase:** **Suspended for production docking** with the current standard-Vina receptor/neutral-MYC setup. Retain all negative data. If α-amylase returns to scope, separately investigate an independently characterized **human active-site** crystal complex and verify its actual inhibitor, occupancy, receptor ions/waters and native-redocking behavior before any ligand library work. The existing 4GQQ ethyl-caffeate complex is not a like-for-like catalytic-site control according to the [primary structural study](https://doi.org/10.1021/jm301273u).
+
+**Next executable task:** freeze a small 3L4W **pose-only pilot plan and input manifest** for a limited structure-defined subset (for example, literature water-leaf mangiferin and organic-leaf quercetin), documenting their pH-6.5 protonation/tautomer states, source stereochemistry, conformer coverage, PDBQT hashes, both tested dry receptor microstates, fixed MIG-derived pocket, seeds, pose-cluster/clash checks, and failure-reporting rules. Run no ligand-library docking until that gate passes. This plan should not treat these two compounds as detected in the original extracts or rank their biological potency.

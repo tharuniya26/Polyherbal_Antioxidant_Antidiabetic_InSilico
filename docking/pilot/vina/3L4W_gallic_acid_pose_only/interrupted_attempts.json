@@ -1,0 +1,33 @@
+{
+  "record_type": "post_interruption_technical_attempt_audit",
+  "scope": "Two in-flight processes at the previous interactive-session interruption; neither produced a saved process log or interpretable output before the continuation audit. This is an evidence-limited reconstruction, not a Vina process log.",
+  "observed_before_interruption": "Main worker had reported 8/20 completed; tail worker had reported through 19/20 completed. Sixteen zero-exit attempt logs were present when the workspace was rechecked.",
+  "observed_at_continuation": "No Vina process was running. The two identified in-flight jobs had no saved output or process log and were therefore executed again under the unchanged frozen settings.",
+  "attempts": [
+    {
+      "microstate": "neutral_acid_reference",
+      "receptor_state": "Asp542H(OD2)",
+      "seed": 4404,
+      "attempt_number": 1,
+      "technical_status": "interrupted_before_exit_capture",
+      "exit_code": "unconfirmed",
+      "runtime_seconds": null,
+      "vina_stdout_or_stderr_saved": false,
+      "output_saved": false,
+      "subsequent_attempt": "The scheduled seed was rerun and has a separately saved zero-exit JSON log and valid PDBQT output in LIG01_neutral_D542H_OD2."
+    },
+    {
+      "microstate": "carboxylate_pH6p5_hypothesis",
+      "receptor_state": "Asp542H(OD2)",
+      "seed": 5505,
+      "attempt_number": 1,
+      "technical_status": "interrupted_before_exit_capture",
+      "exit_code": "unconfirmed",
+      "runtime_seconds": null,
+      "vina_stdout_or_stderr_saved": false,
+      "output_saved": false,
+      "subsequent_attempt": "The scheduled seed was rerun and has a separately saved zero-exit JSON log and valid PDBQT output in LIG01_carboxylate_D542H_OD2."
+    }
+  ],
+  "counting_rule": "Do not count interrupted attempts as completed docking searches or pose outputs; retain their unconfirmed technical exits separately from the 20 completed scheduled runs."
+}

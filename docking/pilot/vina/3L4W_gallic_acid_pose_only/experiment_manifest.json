@@ -1,0 +1,112 @@
+{
+  "MIG_control_results_path": "data/metadata/vina_3L4W_large_box_mig_results.csv",
+  "MIG_control_results_sha256": "9626a145b87c6429e15fd352c53add96e31c9bdb4a3ec3fccc9d058bee7fed09",
+  "all_pose_csv_path": "docking/pilot/vina/3L4W_gallic_acid_pose_only/all_pose_metrics.csv",
+  "all_pose_csv_sha256": "0ae7105f7c212cf6d0ef9c1493572e8bb220a11aa976bd3eb90de2e925c56ed6",
+  "box_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "box_size_A": [
+    30.0,
+    24.0,
+    24.0
+  ],
+  "concurrent_processes": 1,
+  "confirmed_exit_zero_runs": 20,
+  "cpu": 1,
+  "decisions": {
+    "carboxylate_pH6p5_hypothesis/Asp542-": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "carboxylate_pH6p5_hypothesis/Asp542H(OD2)": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "neutral_acid_reference/Asp542-": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "neutral_acid_reference/Asp542H(OD2)": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    }
+  },
+  "energy_range": 5.0,
+  "exhaustiveness": 64,
+  "exit_unconfirmed_runs": 0,
+  "experiment": "3L4W gallic acid pose-only pilot",
+  "failed_runs": 0,
+  "frozen_input_manifest_path": "data/metadata/vina_3L4W_gallic_acid_input_manifest.csv",
+  "frozen_input_manifest_sha256": "148c510888ead5dabb7d7245e7648f60a2cd1737d29217e160529573852c035c",
+  "interrupted_attempt_record_path": "docking/pilot/vina/3L4W_gallic_acid_pose_only/interrupted_attempts.json",
+  "interrupted_attempt_record_sha256": "7e1505e345d479946afbc2982eac842558cf6c78a605af6ffc17be9f7a5a374c",
+  "meeko_version": "0.8.0",
+  "min_rmsd": 1.0,
+  "num_modes": 20,
+  "pair_parse_preflight_path": "docking/pilot/vina/3L4W_gallic_acid_pose_only/vina_pair_parse_preflight.json",
+  "pair_parse_preflight_sha256": "69f160e77f11d314883257e2d9912eb41a18991c3ddb75f28c2f293d6e354dcf",
+  "pose_rules": {
+    "clash": "receptor-ligand heavy distance <1.8 A OR VdW overlap >0.8 A; internal nonbonded >=4-bond heavy distance <1.6 A",
+    "convergence": ">=4/5 rank1 poses per combination pocket+no severe clash+<=2 A symmetry-aware unfitted core RMSD to medoid",
+    "pocket": "all heavy atoms inside box; core centroid <=6 A from MIG centroid; >=50% core atoms within 4 A of MIG heavy atoms"
+  },
+  "python_version": "3.12.10",
+  "rdkit_version": "2026.03.6",
+  "results_csv_path": "data/metadata/vina_3L4W_gallic_acid_pilot_results.csv",
+  "results_csv_sha256": "163df3869513fa3d75b4b6338eaf0838f281a620b42bf8750662be14ac5bdea4",
+  "returned_modes": 382,
+  "scoring": "vina",
+  "script_path": "scripts/run_vina_3L4W_gallic_acid_pilot.py",
+  "script_sha256": "0ae0ad6e34bd7321794a8bbe1e55f4c157f692149e2b3548355c1e43e73b6fb1",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "source_hashes": {
+    "carboxylate_pH6p5_hypothesis/Asp542-": {
+      "MIG_reference_sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand_pdbqt": "aa03afe2a8e4bd4b69933bc33587d12acd455dd3ec4061f1f9c7b1ab358312d0",
+      "receptor_pdbqt": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f",
+      "state_sdf": "0ffa30fab10dc913f7eb4c42ed7dabab5bbc5fd575b5bffca6355c3dd06d8c24"
+    },
+    "carboxylate_pH6p5_hypothesis/Asp542H(OD2)": {
+      "MIG_reference_sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand_pdbqt": "aa03afe2a8e4bd4b69933bc33587d12acd455dd3ec4061f1f9c7b1ab358312d0",
+      "receptor_pdbqt": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f",
+      "state_sdf": "0ffa30fab10dc913f7eb4c42ed7dabab5bbc5fd575b5bffca6355c3dd06d8c24"
+    },
+    "neutral_acid_reference/Asp542-": {
+      "MIG_reference_sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand_pdbqt": "499ca2075b89111d8e0cc5259d3e041ffe2b0585bcbcf7c51dab2c61023d640a",
+      "receptor_pdbqt": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f",
+      "state_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f"
+    },
+    "neutral_acid_reference/Asp542H(OD2)": {
+      "MIG_reference_sdf": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand_pdbqt": "499ca2075b89111d8e0cc5259d3e041ffe2b0585bcbcf7c51dab2c61023d640a",
+      "receptor_pdbqt": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f",
+      "state_sdf": "f7d4484caa6ae596584119ef5517f0900611523830565521f343d981076c5a6f"
+    }
+  },
+  "start_method": "NumPy PCG64 SeedSequence(seed, PubChem CID 370, charge code); seeded random quaternion and translation [-3,3] A; same seed-specific start for both receptors of each ligand state; >=0.5 A box clearance at start",
+  "technical_interrupted_attempts": 2,
+  "validator_path": "scripts/validate_vina_3L4W_gallic_acid_inputs.py",
+  "validator_sha256": "01d7e42a4a06f1858efbfebb417dbfa9ac1243bea4cfba962ee65a8766b1fdfb",
+  "vina_executable": "E:\\docking tools\\vina_1.2.7_win.exe",
+  "vina_executable_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "vina_version": "1.2.7"
+}

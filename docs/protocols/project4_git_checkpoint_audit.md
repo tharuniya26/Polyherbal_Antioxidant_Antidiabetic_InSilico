@@ -1,0 +1,51 @@
+# Project 4 GitHub checkpoint audit — completed work through Step 70
+
+**Scope:** read-only Git and filesystem inventory plus the README edit. **No staging, commit, push, reset or cleanup was performed.** The working tree's previous `55e79ca289d69fcfb3c9889edb5fecea66f627b7` commit, “Add validated agnuside pilot inputs and frozen docking plan,” remains HEAD on `main`; local `origin/main` resolved to the same commit at audit time. The configured `origin` is `https://github.com/tharuniya26/Polyherbal_Antioxidant_Antidiabetic_InSilico.git`. Remote state was read from the local ref; this audit did not fetch or contact GitHub.
+
+## Inventory and safety findings
+
+Before the Step 70 README and this audit were created, `git status --porcelain=v1 -uall` listed **499 untracked nonignored files**, approximately **13.45 MiB** in total: 443 under `docking/`, 19 under `docs/`, 17 under `data/`, 11 under `scripts/`, and nine under `structures/`. No pre-existing tracked file showed a modification; the new README is the intentional tracked change. After this audit, the candidate set is those 499 files, this new report and the README change. The largest untracked file seen was approximately **0.59 MiB**; no untracked file exceeded 50 MiB, and no GitHub 100-MiB file issue was found. This is a size observation, not a content-integrity substitute for the recorded SHA256 checks.
+
+The existing [`.gitignore`](../../.gitignore) excludes `.venv/`, Python caches, `.pytest_cache/`, `.ipynb_checkpoints/`, `.vscode/`, `.env*` except `.env.example`, `*.tmp`, `*.bak`, licenses and **all `*.log` files**. The excluded environment and caches should stay excluded. However, **52 ignored Vina `.log` files** (about **0.18 MiB**) are required to preserve the complete run provenance because native-validation and pilot result CSVs record their log hashes. They are present locally but would **not** be included by ordinary `git add` on an output directory. The eight groups are:
+
+| Ignored log group | Count | Checkpoint action |
+| --- | ---: | --- |
+| `docking/validation/vina/3L4W_diagnostic_redocking/` | 5 | Explicitly force-stage only `*.log` files after review. |
+| `docking/validation/vina/3L4W_sensitivity/` | 10 | Same. |
+| `docking/validation/vina/3L4W_receptor_sensitivity/` | 10 | Same. |
+| `docking/validation/vina/3L4W_large_box_MIG/` | 10 | Same. |
+| `docking/validation/vina/4GQR_diagnostic_redocking/` | 5 | Same; preserve failed validation evidence. |
+| `docking/validation/vina/4GQR_convergence_E64/` | 5 | Same. |
+| `docking/validation/vina/4GQR_Glu233H_sensitivity/` | 5 | Same. |
+| `docking/pilot/vina/3L4W_agnuside_pose_only/` | 2 | Same; these are interrupted-attempt provenance. |
+
+The other pilot process records use nonignored JSON files and are included with their output directories. Do not blanket-force-add ignored files: the virtual environment has thousands of ignored entries. No untracked `.exe`, `.dll`, archive, database, PDF or DOCX file was found. The project Vina executable lives at a **local external Windows path**, `E:\docking tools\vina_1.2.7_win.exe`, and must **not** be added to the research repository. That path appears in reproducibility scripts and logs; it is a workstation dependency, not a credential. A text search of new scripts/reports found no obvious API key or password value, but any GitHub checkpoint should still receive a final human diff review.
+
+## Explicit proposed staging list: completed nonignored artifacts
+
+These paths contain completed preparation, validation, negative-control, pilot, audit and synthesis records. **The list is a proposal; none has been staged.** Directory entries below mean the current files in that named directory only, after a dry-run listing confirms them.
+
+1. **Documentation:** `README.md`; `docs/protocols/project4_git_checkpoint_audit.md`; `docs/protocols/project4_five_plant_scientific_synthesis.md`; `docs/protocols/project4_manuscript_readiness.md`; and all currently untracked `docs/protocols/vina_3L4W_*.md`, `docs/protocols/vina_4GQR_*.md`, `docs/protocols/vina_remaining_plants_input_assessment.md`, `docs/protocols/vina_target_validation_summary.md`. These include the failed 4GQR report, receptor/box sensitivity, gallic and agnuside negative pilot outcomes, and the scientific interpretation needed with result CSVs.
+2. **Run-level and evidence metadata:** the **17 currently untracked** `data/metadata/*.csv` listed by Git status, from `project4_five_plant_evidence_summary.csv`, `vina_target_validation_summary.csv`, 4GQR E32/E64/Glu233H/failure tables, 3L4W pilot/box/MIG/gallic/agnuside tables and the conditional remaining-plant input manifest. Use the exact current `git status --short --untracked-files=all` list; do not stage future or unfinished tables by a broad wildcard without review.
+3. **Reproducibility code:** the **11 currently untracked** `scripts/*.py`: `assess_vina_3L4W_box_adequacy.py`; `run_vina_3L4W_agnuside_pilot.py`; `run_vina_3L4W_gallic_acid_pilot.py`; `run_vina_3L4W_large_box_mig_validation.py`; `run_vina_3L4W_phytochemical_pilot.py`; `run_vina_4GQR_convergence.py`; `run_vina_4GQR_glu233_sensitivity.py`; `run_vina_4GQR_redocking.py`; `validate_vina_3L4W_gallic_acid_inputs.py`; `validate_vina_3L4W_pilot_inputs.py`; `validate_vina_remaining_plants_inputs.py`. Already tracked preparation scripts remain untouched.
+4. **Derived chemical structures:** `structures/ligands/vina_prepared/pilot_3L4W/` (six separately labelled monoanion SDF/PDBQT files); `structures/ligands/vina_prepared/remaining_plants_3L4W/` (two E-caffeate carboxylate files, retained as **HOLD** evidence rather than docking approval); and `structures/proteins/vina_prepared/4GQR_dry_noNAG_CA_CL_PCA_pH7p5_diagnostic_Meeko0.8.0.pdbqt`. Existing tracked original PDB/mmCIF, reference SDF/PDBQT, 3L4W receptor models and agnuside conformers need no new staging and must remain unchanged.
+5. **Raw and derived docking outputs:** `docking/validation/vina/3L4W_large_box_MIG/`; `docking/validation/vina/4GQR_diagnostic_redocking/`; `docking/validation/vina/4GQR_convergence_E64/`; `docking/validation/vina/4GQR_Glu233H_sensitivity/`; `docking/pilot/vina/3L4W_phytochemical_pose_only/`; `docking/pilot/vina/3L4W_box_adequacy_sensitivity/`; `docking/pilot/vina/3L4W_gallic_acid_pose_only/`; `docking/pilot/vina/3L4W_agnuside_pose_only/`. These eight directories contain the untracked source-hashed starts, returned PDBQT modes, JSON attempt/process records, per-pose CSVs and experiment manifests. The last directory also contains already tracked Step 66 frozen inputs; staging its new files does not require changing those inputs.
+6. **Ignored but essential provenance:** the **52 exact `.log` files** in the table above, and no other ignored path. They require an explicit, reviewed `git add -f` path list or narrowly scoped pathspec. The old 3L4W logs are included because their already tracked validation CSVs cite their hashes, even though the completed native-validation outputs themselves were pushed earlier.
+
+The status inventory contains **no observed unfinished untracked output category** outside those groups. The completed negative and inconclusive experiments belong in the checkpoint; excluding them would bias the scientific record. Raw PDBQT poses and starts are necessary to reproduce pose-level RMSD, box-face and water-overlap assertions; metadata CSVs alone are not an adequate backup.
+
+## Paths to exclude and material absent from the repository
+
+**Exclude:** `.venv/`, `venv/`, `__pycache__/`, `.pytest_cache/`, `.ipynb_checkpoints/`, `.vscode/`, `.env*`, temporary/backup files, local proprietary software or license files, and any Vina executable. Do not force-stage these while adding logs. Do not stage a temporary test output created after this audit without another review. The `.gitignore` currently excludes `.log` globally; the narrow log exception should be handled at staging time or, in a later separately reviewed change, by a purpose-specific ignore rule. This task leaves `.gitignore` unchanged.
+
+**Important absences:** the original dissertation/bibliography, raw in-vitro assay measurements, complete extraction and assay protocols, replicate/statistical records and identified original-extract constituents are not in this repository. `requirements.txt` pins only PyYAML; it does **not** reproduce the installed RDKit, Meeko 0.8.0, Gemmi, NumPy or AutoDock Vina 1.2.7 environment on another machine. Some scripts use a local absolute Vina path and would need environment-specific configuration. No GOLD production docking, ADMET, antioxidant quantum-chemical calculation or molecular-dynamics result exists to back up. These are evidence and environment gaps, not files to fabricate for the checkpoint.
+
+## README link check and proposed next command
+
+After this audit file was created, all repository-relative links in the updated README should resolve in this working tree. The README explicitly directs readers to both completed and suspended models and warns that the GitHub copy will remain incomplete until the checkpoint is reviewed and staged. Before any real staging, obtain a **dry-run listing** of the exact nonignored proposal:
+
+```powershell
+git add --dry-run -- README.md docs/protocols/ data/metadata/ scripts/ structures/ligands/vina_prepared/pilot_3L4W/ structures/ligands/vina_prepared/remaining_plants_3L4W/ structures/proteins/vina_prepared/4GQR_dry_noNAG_CA_CL_PCA_pH7p5_diagnostic_Meeko0.8.0.pdbqt docking/validation/vina/3L4W_large_box_MIG/ docking/validation/vina/4GQR_diagnostic_redocking/ docking/validation/vina/4GQR_convergence_E64/ docking/validation/vina/4GQR_Glu233H_sensitivity/ docking/pilot/vina/3L4W_phytochemical_pose_only/ docking/pilot/vina/3L4W_box_adequacy_sensitivity/ docking/pilot/vina/3L4W_gallic_acid_pose_only/ docking/pilot/vina/3L4W_agnuside_pose_only/
+```
+
+This is the **recommended next Git command for user review**, not a command run in this task. Review its output against the groups above. It intentionally does **not** show ignored `.log` files. Before a future actual commit, separately preview and force-stage only the 52 listed logs, verify `git diff --cached --stat` and source hashes, then obtain explicit approval for the commit/push action. The existing `55e79ca` commit must remain intact.

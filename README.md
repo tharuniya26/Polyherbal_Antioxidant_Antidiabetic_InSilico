@@ -1,159 +1,105 @@
-# Integrated In-Vitro and In-Silico Investigation of Antioxidant and Antidiabetic-Related Properties of Polyherbal Formulations Containing *Aegle marmelos*, *Boerhavia diffusa*, *Salacia reticulata*, *Senna auriculata*, and *Vitex negundo*
+# Integrated in-vitro and in-silico investigation of five polyherbal medicinal plants
 
-| Project detail | Description |
-| --- | --- |
-| Researcher | Tharuniya Anpalakan |
-| Institution | Northumbria University, Department of Applied Sciences |
-| Original in-vitro research report | 11 August 2026 |
-| Project status | In-vitro findings have been reported; the in-silico extension is planned. |
+**Research:** *Integrated In-Vitro and In-Silico Investigation of Antioxidant and Antidiabetic-Related Properties of Polyherbal Formulations Containing Aegle marmelos, Boerhavia diffusa, Salacia reticulata, Senna auriculata, and Vitex negundo*
 
-## Research overview
+**Researcher:** Tharuniya Anpalakan · **Institution:** Northumbria University, Department of Applied Sciences
 
-This project brings together an existing experimental evaluation of aqueous leaf extracts from five medicinal plants and a proposed computational investigation of their antioxidant and antidiabetic-related constituents. The original study compared three polyherbal formulations using phytochemical, radical-scavenging, and glucose-related assays. The computational extension is intended to examine literature-supported plant compounds, their interactions with justified protein targets, antioxidant-related molecular properties, and predicted pharmacokinetic and safety profiles.
+**Original in-vitro report date:** 11 August 2026
 
-The in-vitro work is the source of the qualitative findings described below. A formulation-level assay response does not identify which constituent caused it, and a future docking or ADMET prediction would provide a hypothesis rather than proof of clinical efficacy.
+## Scope and current status
 
-## Objectives
+The original study compared **aqueous leaf extracts** of five medicinal plants in three polyherbal formulations using phytochemical, antioxidant-related and glucose-related in-vitro assays. This repository extends that work with an evidence-tiered phytochemical reference library, prepared molecular structures, receptor assessments, native-ligand pose-recovery tests and limited **AutoDock Vina 1.2.7 exploratory pose-placement experiments**. The computational work is a hypothesis-generating extension, not a measurement of enzyme inhibition or clinical antidiabetic efficacy.
 
-1. Document the five selected plants, the three extract ratios, and the assays used in the original study.
-2. Preserve the reported experimental comparisons while identifying data that still need verification against the original report and raw records.
-3. Select candidate phytochemicals from traceable literature and structure records, then prepare reproducible ligand and target datasets.
-4. Evaluate plausible antidiabetic-related target interactions by molecular docking and explore antioxidant-related molecular properties with an explicitly defined computational method.
-5. Assess predicted absorption, distribution, metabolism, excretion, and toxicity (ADMET), and interpret computational results alongside the experimental evidence and its limitations.
+The original dissertation, raw experimental measurements and full extraction/assay records are **not deposited here**. The qualitative experimental comparisons below are transcribed project background and cannot be independently recalculated from this repository. **No named phytochemical was analytically confirmed in the original project's aqueous extracts**, and the formulation ratios are proportions of *extracts*, not concentrations of individual molecules.
 
-## Plants and formulations
+## Original experimental context
 
-The plant codes and ratios below are transcribed from [`config/formulations.yaml`](config/formulations.yaml). They describe **proportions of aqueous leaf extracts**, not concentrations of purified phytochemicals. The config does not specify a mass, volume, or concentration unit for each ratio part.
+Plant codes and formulation ratios come from [the configuration transcription](config/formulations.yaml). A dash means that plant is absent; each formulation totals ten unspecified ratio parts.
 
-| Code | Medicinal plant |
-| --- | --- |
-| AM | *Aegle marmelos* |
-| BD | *Boerhavia diffusa* |
-| SA | *Senna auriculata* |
-| SR | *Salacia reticulata* |
-| VN | *Vitex negundo* |
-
-| Formulation | AM | BD | SA | SR | VN | Basis recorded in config |
+| Formulation | *Aegle marmelos* (AM) | *Boerhavia diffusa* (BD) | *Senna auriculata* (SA) | *Salacia reticulata* (SR) | *Vitex negundo* (VN) | Recorded basis |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| Combination 1 | 2.0 | 1.5 | 2.0 | 2.0 | 2.5 | Equal weighting of total phenolic content (TPC), total flavonoid content (TFC), and total antioxidant capacity (TAC) |
-| Combination 2 | 2.0 | 1.0 | 2.5 | 2.0 | 2.5 | Greater emphasis on TAC; TPC/TFC/TAC weights of 0.25/0.25/0.50 |
-| Combination 3 | — | — | 3.5 | 3.5 | 3.0 | Selected plants with higher antioxidant-related measurements |
+| C1 | 2.0 | 1.5 | 2.0 | 2.0 | 2.5 | Equal TPC/TFC/TAC weighting |
+| C2 | 2.0 | 1.0 | 2.5 | 2.0 | 2.5 | Greater TAC emphasis; TPC/TFC/TAC weights 0.25/0.25/0.50 |
+| C3 | — | — | 3.5 | 3.5 | 3.0 | Selected plants with higher antioxidant-related measurements |
 
-An em dash means the plant is absent from that formulation. Each listed ratio totals 10 parts.
+The original work used aqueous **leaf** extracts and recorded qualitative phytochemical screening; total phenolic content (TPC), total flavonoid content (TFC) and total antioxidant capacity (TAC); DPPH and ABTS radical-scavenging assays; glucose adsorption; and yeast glucose uptake. The existing README transcription reports C1 as strongest for DPPH, C2 generally highest for glucose adsorption, and C3 strongest for ABTS with generally high yeast uptake. Those are **reported qualitative trends**, without deposited raw values, replicate counts, uncertainties or statistical tests. Extraction temperature, duration, leaf-to-water ratio, yield and some reported data inconsistencies also remain unreconciled against the original source records.
 
-## Original in-vitro study
+## Literature-qualified compound library
 
-### Aqueous leaf extraction and formulation
+The [final preliminary library](data/compounds/final_preliminary_ligand_library.csv) holds **10 assigned reference chemical structures across 11 assigned plant–compound associations**, plus **one unresolved Aegle kaempferol-rutinoside association without an assigned ligand**. Rutin (LIG02) is one structure associated with both Aegle and Senna; it is not two different ligands. The [five-plant evidence summary](data/metadata/project4_five_plant_evidence_summary.csv) preserves plant part, extraction solvent, literature tier, structure uncertainty and docking status for every association.
 
-The original research used leaf material from the five plants to prepare **aqueous leaf extracts**. The extracts were then combined in the three proportions above for the comparative assays. The materials currently in this repository do not provide the extraction temperature, duration, leaf-to-water ratio, drying method, yield, or complete preparation protocol. These parameters must be recovered from the original laboratory record or report before the extraction can be reproduced precisely.
+| Plant | Selected reference(s) and occurrence boundary | 3L4W status |
+| --- | --- | --- |
+| *Aegle marmelos* | Gallic acid and rutin reported from **ethanol-extracted leaves**; a separate kaempferol-rutinoside assignment remains identity-unresolved. | Gallic acid tested; all four neutral/carboxylate × receptor conditions **INCONCLUSIVE**. Rutin and tentative glycoside untested. |
+| *Boerhavia diffusa* | Underivatized caffeic acid reported from a boiled-water **mixed-aerial-part** infusion; methanolic-leaf GC-MS identified a **tri-TMS derivative**. Source E/Z geometry and isolated aqueous-leaf identity are unresolved. | Trans-caffeic-acid PubChem reference **on botanical/isomer HOLD; not docked**. |
+| *Salacia reticulata* | Mangiferin has compound-specific published **water-leaf** HPLC evidence. Hot-water leaves support epicatechin at the compound level, without proof of the exact PubChem optical isomer. | Mangiferin neutral and 6-O monoanion tested; results depend on receptor state and box. Epicatechin untested. |
+| *Senna auriculata* | Quercetin, kaempferol, luteolin, rutin and nicotiflorin have leaf literature using **80% aqueous acetone and fractions**, not water-only leaf identification. | Quercetin neutral and 4′-O monoanion tested; only the monoanion/Asp542H model met the geometric screen in both boxes. Other references untested. |
+| *Vitex negundo* | Agnuside has leaf occurrence evidence, but full water-only chromatographic details and source-specific stereochemistry remain unresolved; methanol-first aqueous partition is a different extraction method. | Neutral PubChem agnuside reference tested; both receptor conditions **INCONCLUSIVE**. |
 
-### Assays
+These are associations in **external publications**. A PubChem CID, prepared reference structure or docked pose does not identify a molecule in the original laboratory extract. The [literature reviews](literature/five_plant_compound_evidence_review.md) and [evidence corrections](docs/compound_evidence_corrections.md) document the source-specific boundaries.
 
-| Assay | Experimental purpose |
-| --- | --- |
-| Qualitative phytochemical screening | Screen extracts for classes of phytochemicals |
-| TPC, TFC, and TAC | Characterize phenolic content, flavonoid content, and total antioxidant capacity; inform formulation selection |
-| DPPH and ABTS radical-scavenging assays | Compare antioxidant-related responses under two assay conditions |
-| Glucose adsorption | Assess glucose binding/adsorption under the reported in-vitro conditions |
-| *Saccharomyces cerevisiae* (yeast) glucose uptake | Assess glucose uptake in a yeast-based assay |
+## Completed molecular work
 
-### Reported findings and data quality
+### Ligands and receptors
 
-| Comparison | Finding reported for the original experiment |
-| --- | --- |
-| DPPH | Combination 1 performed strongest in the reported comparison. |
-| Glucose adsorption | Combination 2 generally showed the highest response. |
-| ABTS | Combination 3 performed strongest in the reported comparison. |
-| Yeast glucose uptake | Combination 3 generally showed high uptake. |
+All ten assigned reference ligands have checked 3D SDF structures under [`structures/ligands/prepared/`](structures/ligands/prepared/) and preliminary Meeko PDBQT files under [`structures/ligands/vina_prepared/`](structures/ligands/vina_prepared/). Preparation scripts and per-ligand metadata record source identifiers, stereochemistry, conformers, atom maps and hashes. Some exact botanical isomers or bound protonation states remain conditional even when a reference structure passes file-quality checks. Additional neutral/ionized hypotheses used in pilots have **separately named** files; original references remain preserved.
 
-These are qualitative summaries of the existing experimental research, not values recalculated from deposited data. The original report's underlying tables and raw measurements are not present here, so numerical values, uncertainty, replicate counts, units, and statistical significance cannot be checked. Reported experimental-data inconsistencies remain unresolved; any conflicting values, labels, or trends in the source material should be reconciled against laboratory records before quantitative comparison, pooling, or publication. No missing values have been inferred to resolve those inconsistencies.
+Official RCSB structures and working receptor files are under [`structures/proteins/`](structures/proteins/). The controlled pose work uses human N-terminal maltase-glucoamylase **3L4W** with native miglitol (MIG), in two pH-6.5 **dry/no-NAG** receptor hypotheses: Asp443−/Asp542−/His600-HID and Asp443−/Asp542H(OD2)/His600-HID. Human pancreatic α-amylase **4GQR** with native myricetin (MYC) was also assessed. Earlier 1XD0 and 2QMJ preparation records are retained; they are not presented as validated phytochemical targets. [Receptor preparation](docs/protocols/vina_4GQR_3L4W_preparation.md), [3L4W chemistry review](docs/protocols/vina_3L4W_chemistry_review.md) and [target summary](docs/protocols/vina_target_validation_summary.md) explain the structural choices.
 
-## Planned in-silico investigation
+### Native-ligand validation
 
-The computational work has **not yet been performed**. The proposed workflow is:
+The 3L4W **native-MIG positive control** achieved rank-1, symmetry-aware crystal-frame heavy-atom RMSD ≤2.0 Å in **5/5 seeds per receptor** in the original box and **10/10 total** in the enlarged 30 × 24 × 24 Å box. The enlarged-box range was **1.8671–1.9362 Å**. This is a limited **pose-recovery screen**; more crystal-like secondary MIG poses sometimes ranked lower. It does not establish physical binding energetics, water or glycan treatment, or biochemical potency. See the [large-box validation](docs/protocols/vina_3L4W_large_box_mig_validation.md) and [run CSV](data/metadata/vina_3L4W_large_box_mig_results.csv).
 
-1. **Compound selection:** identify plant-associated candidate compounds through citable literature, record the plant-to-compound evidence and chemical identifiers, and avoid treating an extract ratio as a compound concentration.
-2. **Ligand acquisition and preparation:** obtain chemical structures and identifiers from [PubChem](https://pubchem.ncbi.nlm.nih.gov/); inspect and prepare three-dimensional ligand structures using Avogadro. Record protonation/tautomer decisions, stereochemistry, and preparation settings.
-3. **Target selection and preparation:** choose biologically justified antidiabetic-related and, where suitable, antioxidant-related protein targets; obtain experimental structures from the [RCSB Protein Data Bank](https://www.rcsb.org/). Document PDB IDs, chain selection, missing residues, cofactors, waters, bound ligands, and binding-site definitions. No target or PDB entry has been selected in this repository.
-4. **Docking:** use CCDC GOLD to dock prepared ligands into defined binding sites. Record software version, scoring function, search settings, reference-ligand validation where possible, poses, and scores. Inspect contacts and figures in BIOVIA Discovery Studio Visualizer. Docking scores must be interpreted within a consistent protocol, not as direct measures of activity.
-5. **Antioxidant-related computational analysis:** define and justify molecular descriptors or an appropriate mechanistic calculation relevant to antioxidant behavior, including the chemical state and solvent assumptions where applicable. Compare these results cautiously with DPPH, ABTS, and TAC observations; the exact calculation protocol remains to be selected.
-6. **ADMET prediction:** evaluate candidate compounds with a documented prediction tool and version for properties such as absorption, distribution, metabolism, excretion, and toxicity. Report model applicability, confidence or uncertainty when available, and any conflicting predictions. No ADMET predictions are available yet.
-7. **Analysis and reporting:** use Python to organize compound provenance, formulation metadata, docking outputs, antioxidant-related calculations, and ADMET predictions. Keep raw inputs, settings, and processed results linked so analyses can be repeated.
+The current 4GQR/MYC Vina model **failed** the prespecified rank-1 ≤2.0 Å native-pose screen: **0/5** at exhaustiveness 32, **0/5** at 64, and **0/5** after the one-variable Glu233H sensitivity test. This model is **suspended for phytochemical docking**. A lower-ranked native-like pose in one run does not reverse that result. See the [failure investigation](docs/protocols/vina_4GQR_failure_investigation.md) and [Glu233H report](docs/protocols/vina_4GQR_glu233_sensitivity_report.md).
 
-GOLD and Discovery Studio are separate licensed applications; they are not installed by the Python requirements file. PubChem and RCSB PDB are source databases, while Avogadro supports molecular preparation and inspection. None of these tools implies that a docking or ADMET result already exists.
+### Exploratory 3L4W phytochemical poses
 
-## Software and Python environment
+The frozen pilot rule evaluates MIG-pocket localization, severe clashes and **unfitted rigid-core clustering** in at least **4/5 rank-1 seeds per ligand/receptor condition**. A geometric **PASS** indicates a repeatable *computed placement in that model only*. It is not a binding or inhibition result. Neutral and ionized ligand hypotheses are reported separately.
 
-The repository currently lists only `PyYAML==6.0.3` in [`requirements.txt`](requirements.txt). It is sufficient to read the YAML configuration with Python. No analysis scripts, notebooks, docking inputs, or computational output files have been deposited, and no Python version is pinned. A future computational workflow will need its own documented software versions, dependencies, and run commands.
+| Ligand hypothesis | Asp542−: original → enlarged box | Asp542H(OD2): original → enlarged box |
+| --- | --- | --- |
+| Mangiferin neutral | PASS 5/5 → PASS 5/5 | PASS 5/5 → INCONCLUSIVE 3/5 |
+| Mangiferin 6-O monoanion | INCONCLUSIVE 0/5 → PASS 4/5 | PASS 5/5 → PASS 5/5 |
+| Quercetin neutral | INCONCLUSIVE 0/5 → INCONCLUSIVE 0/5 | INCONCLUSIVE 0/5 → INCONCLUSIVE 0/5 |
+| Quercetin 4′-O monoanion | INCONCLUSIVE 0/5 → INCONCLUSIVE 0/5 | PASS 5/5 → PASS 5/5 |
 
-### Installation
+The original box was **24 × 18 × 18 Å**; its face lay within 1 Å of **36/40 rank-1 poses**. A single predefined enlarged-box comparison reduced this to **1/40**, but changed **two of eight** condition classifications. Both boxes had 4/8 PASS calls in total. The larger box passed its native-MIG control and is qualified for **limited pose-only work**, while candidate geometry remains **box and receptor-state sensitive**. The original 40-run pilot and enlarged comparison each have two complete pose outputs with **unconfirmed process exits**; their provenance is preserved rather than relabelled as confirmed successes. Read the [integrated assessment](docs/protocols/vina_3L4W_integrated_pilot_assessment.md), [box audit](docs/protocols/vina_3L4W_box_adequacy_report.md) and corresponding [original](data/metadata/vina_3L4W_phytochemical_pilot_results.csv) and [enlarged](data/metadata/vina_3L4W_box_adequacy_results.csv) run tables.
 
-Clone or download the repository, then create a Python virtual environment in its root directory. For example, in PowerShell:
+**Gallic acid:** neutral acid and carboxylate each yielded **INCONCLUSIVE 0/5** on both enlarged-box receptors. All 20 rank-1 poses favored a Z− box-face site outside the frozen MIG pocket; every run also sampled a lower-ranked pocket pose. The off-pocket site overlaps omitted deposited waters. See the [pilot report](docs/protocols/vina_3L4W_gallic_acid_pilot_report.md) and [structural investigation](docs/protocols/vina_3L4W_gallic_acid_off_pocket_investigation.md).
+
+**Agnuside:** neutral PubChem CID 442416 yielded **INCONCLUSIVE 0/5** on both receptors. Thirteen lower-ranked modes occupied the frozen MIG pocket; all ten rank-1 poses and 12/13 pocket alternatives overlapped omitted deposited water oxygen positions. Five starting conformers were paired one-to-one with five seeds, so conformer and seed effects cannot be separated. See the [pilot report](docs/protocols/vina_3L4W_agnuside_pilot_report.md) and [structural investigation](docs/protocols/vina_3L4W_agnuside_structural_investigation.md).
+
+## Reproducing and inspecting the record
+
+The project virtual environment was used for the completed work. [`requirements.txt`](requirements.txt) currently pins **PyYAML only**; it is **not a complete docking-environment lockfile**. The archived reports record Vina 1.2.7, Meeko 0.8.0, RDKit/Gemmi usage, settings, seeds, commands and SHA256 values. Vina is a separate executable; CCDC GOLD and BIOVIA Discovery Studio were considered in planning but **no GOLD production docking, antioxidant quantum-chemical analysis, ADMET or molecular dynamics** is reported here. To inspect the YAML and CSV record without rerunning docking:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -c "import yaml; print(yaml.safe_load(open('config/formulations.yaml', encoding='utf-8'))['formulations'])"
 ```
 
-On macOS or Linux, activate the environment with `source .venv/bin/activate` before installing requirements. To inspect the currently reproducible formulation configuration:
+This installs only the declared dependency. Re-executing molecular preparation or Vina scripts requires separately documented compatible RDKit, Meeko, Gemmi, NumPy and Vina installations; some scripts refer to the original workstation's `E:\docking tools\vina_1.2.7_win.exe` and need local-path configuration. **Do not run a docking script merely to inspect archived results.**
 
-```powershell
-python -c "import yaml; from pathlib import Path; data = yaml.safe_load(Path('config/formulations.yaml').read_text(encoding='utf-8')); print(data['formulations'])"
-```
-
-This command reads and prints the recorded ratios; it does not run an assay or computational analysis.
-
-## Repository structure
-
-```text
-.
-├── README.md                 Project documentation
-├── requirements.txt          Python dependency (PyYAML)
-├── config/
-│   └── formulations.yaml     Plants, extract ratios, and assay inventory
-├── admet/                    Reserved for future ADMET work
-├── data/                     Reserved for research data
-├── docking/                  Reserved for docking inputs and outputs
-├── docs/                     Reserved for supporting documentation
-├── literature/               Reserved for literature records
-├── manuscript/               Reserved for manuscript materials
-├── notebooks/                Reserved for analysis notebooks
-├── results/                  Reserved for result tables and figures
-├── scripts/                  Reserved for analysis scripts
-├── structures/               Reserved for ligand and protein structures
-└── tests/                    Reserved for tests
-```
-
-At present, the named research directories contain no deposited files; empty directories may not appear in a Git clone. The tracked project content is the README, formulation YAML, requirements file, and `.gitignore`.
-
-## Reproducibility and results status
-
-| Component | Current status |
+| Research artifact | Location |
 | --- | --- |
-| Plant identities, formulation ratios, assay inventory | Recorded in `config/formulations.yaml`; readable with the installation steps above |
-| Original experimental comparisons | Qualitatively reported; raw data, detailed methods, and source tables are not deposited |
-| Ligand and target selection | Planned; no curated compound list or PDB structures deposited |
-| Molecular docking and antioxidant-related calculations | Planned; no protocols, scripts, poses, scores, or calculation results deposited |
-| ADMET analysis | Planned; no predictions deposited |
+| Literature evidence and selection | [`literature/`](literature/), [`data/compounds/`](data/compounds/), [five-plant evidence table](data/metadata/project4_five_plant_evidence_summary.csv) |
+| Ligand/receptor preparation, structures and metadata | [`structures/`](structures/), [`data/metadata/`](data/metadata/), [`scripts/`](scripts/) |
+| Frozen docking configurations, starts, output poses, process records and per-pose tables | [`docking/validation/vina/`](docking/validation/vina/), [`docking/pilot/vina/`](docking/pilot/vina/) |
+| Scientific interpretation and reproducibility reports | [`docs/protocols/`](docs/protocols/), [five-plant synthesis](docs/protocols/project4_five_plant_scientific_synthesis.md), [manuscript-readiness assessment](docs/protocols/project4_manuscript_readiness.md) |
 
-Consequently, the repository currently supports reproduction of the **configuration record**, not independent reproduction of the laboratory experiments or execution of the proposed computational workflow.
+Run-level CSVs record input/output paths and hashes; experiment manifests and saved starts link each run to its exact chemistry and settings. Some Vina `.log` files are currently ignored by `.gitignore`; the [Git checkpoint audit](docs/protocols/project4_git_checkpoint_audit.md) identifies the files needed to back up the full provenance. The README describes files present in this working repository; GitHub completeness must be checked against that audit.
 
-## Scientific limitations
+## Scientific and publication limits
 
-- Aqueous extract assays measure mixtures; the contribution and concentration of any individual compound are unknown.
-- The available repository material lacks complete extraction and assay protocols, raw observations, replicate information, uncertainty estimates, and resolved experimental inconsistencies.
-- DPPH, ABTS, glucose adsorption, and yeast uptake are screening assays. They do not by themselves establish mechanism, efficacy in humans, or clinical safety.
-- Plant-to-compound assignments from literature require source-specific verification; a compound reported in a plant is not automatically confirmed in these aqueous leaf extracts.
-- Docking is sensitive to target structure, ligand state, binding-site setup, and scoring choices. Antioxidant-related calculations and ADMET predictions also depend on their models and assumptions. Any future predictions will need experimental follow-up.
+- The missing original dissertation and raw in-vitro observations prevent independent numerical reproduction, statistical interpretation and verification of reported experimental inconsistencies.
+- The candidate library is drawn from external literature with unequal plant-part, solvent and stereochemical evidence. It does **not** profile the original aqueous leaf extracts or establish constituent concentrations in C1–C3.
+- Both tested 3L4W receptors omit six linked NAG units and crystallographic waters and use provisional Asp542/His600 protonation. Static deposited water positions reveal geometric conflicts but do not establish dynamic solvent behavior. A successful native-MIG pose screen cannot validate these omitted components or scoring physics.
+- Phenolic acid/phenolate and glycoside reference states may differ from solution or bound microstates. Five starts do not establish complete sampling of agnuside's flexible glycoside conformations.
+- Vina scores and contact distances cannot establish biochemical inhibition, relative potency, antioxidant mechanism, antidiabetic efficacy or formulation synergy. DPPH/ABTS are solution assays and are not reproduced by protein docking.
 
-## Source and references
+The [scientific synthesis](docs/protocols/project4_five_plant_scientific_synthesis.md) states the defensible findings and unresolved gates for a manuscript. Future work should recover the original experimental records, update the software environment specification, and independently validate any new target/solvent model before broader docking.
 
-1. Anpalakan, Tharuniya. *Formulation and in vitro Evaluation of Polyherbal Combinations of Aegle marmelos, Boerhavia diffusa, Salacia reticulata, Senna auriculata, and Vitex negundo: A Study of Antioxidant and Antidiabetic Properties.* Final-year Biomedical Science research report, Northumbria University, Department of Applied Sciences, 11 August 2026. The report is identified in the existing project material but is not included in this repository; its bibliography cannot be verified here.
-2. [`config/formulations.yaml`](config/formulations.yaml). Project transcription of formulation ratios, plant codes, and assay categories, attributed in its header to Section 3.0 and Appendix 3 of the original report.
+## Attribution and source record
 
-The original report's individual literature references are not available in this repository, so they are not reproduced or supplemented with unverified citations here. Future compound and target choices should carry their own traceable references.
-
-## Authorship and supervision
-
-The original in-vitro research was conducted by **Tharuniya Anpalakan** at the **Department of Applied Sciences, Northumbria University**. **Mr. Visal Chamikara** supervised the in-vitro research, with **Ms. Upamitha Gunawardane** as co-supervisor. The report date above refers to that original experimental work; it is not a completion date for the planned computational extension.
+The original in-vitro work was conducted by **Tharuniya Anpalakan**, Department of Applied Sciences, **Northumbria University**, under **Mr. Visal Chamikara** (supervisor) and **Ms. Upamitha Gunawardane** (co-supervisor). The original report is identified in project documentation as *Formulation and in vitro Evaluation of Polyherbal Combinations of Aegle marmelos, Boerhavia diffusa, Salacia reticulata, Senna auriculata, and Vitex negundo: A Study of Antioxidant and Antidiabetic Properties*, dated **11 August 2026**; the report itself and its bibliography are not deposited. The [configuration](config/formulations.yaml) transcribes its formulation and assay context. Verified compound-specific literature references and their limitations are linked from the [library](data/compounds/final_preliminary_ligand_library.csv) and [evidence reviews](literature/five_plant_compound_evidence_review.md); no citation or experimental value has been inferred to fill the missing dissertation record.

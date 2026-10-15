@@ -1,0 +1,75 @@
+{
+  "experiment": "4GQR/MYC one-variable Glu233H sensitivity",
+  "created_UTC": "2026-10-13T14:25:59.462476+00:00",
+  "source_SHA256": {
+    "structures\\proteins\\original\\4GQR.pdb": "e3d36d41f8d59498cb24073997d5ddacf407269b00eef9b6b50c6530ca36b584",
+    "structures\\proteins\\original\\4GQR.cif": "bae3af37a5f6e69298fcf941c2b737d08d30d6a14fe6f370e4ff06b914aaf333",
+    "docking\\validation\\definitions\\MYC.cif": "fe429a0e62755f5b3296fb359e31df4dad3397d5909135b851074341c7a97324",
+    "structures\\proteins\\vina_prepared\\4GQR_validation_local_noNAG_Meeko0.8.0.pdbqt": "a72f5ce60784472c8f3d9074b94c02296fd88819983c169f2a944610adb959e4",
+    "structures\\proteins\\prepared\\4GQR_validation_local_noNAG_pH7p5.pdb": "0d14e2ccc51802d23afdcb863f0769d712aa92f4e8a1496c93b796c69b9a0c07",
+    "docking\\validation\\vina\\4GQR_MYC_native_pose.sdf": "77e8108920f52904639d0ce2839eab4c03fd8fbad8a0081925627b08ab07d0a3",
+    "docking\\validation\\vina\\4GQR_MYC_crystal_pose_reference.pdbqt": "e7e0dc29c4662b24fcf45c0709066cbb307fe36d519d1a25b2a828d09cd4120c",
+    "docking\\validation\\vina\\4GQR_MYC_sdf_to_pdbqt_atom_map.csv": "75bf52d86ca072d919ffabcacf2823d71bdcf6f41c448a97262eee195d1ba0ed",
+    "docking\\validation\\vina\\4GQR_MYC_atom_map.csv": "268366f4467730c49dc5599a8993fe7ad2880858f4ebbf8f4b58c6a92d48c2f7",
+    "docking\\configs\\vina_templates\\PCA_C_terminal_Meeko_0.8.0.json": "2e7998469c394035edf8320598c7511baa513df14249372c829b9df09c6f7ed6"
+  },
+  "E64_results_SHA256": "6195b27c551d820695c954f0476757020ec8d782dcc1488f23478e07143c287a",
+  "receptor_QC": {
+    "geometry": {
+      "Glu233_CD_OE1_A": 1.2541634662196144,
+      "Glu233_CD_OE2_A": 1.2508357206284155,
+      "OE2_HE2_A": 0.98,
+      "CD_OE2_HE2_deg": 108.0,
+      "HE2_OE1_A": 2.2026212559462603,
+      "nearest_other_receptor_atom_A": 3.150143529100781,
+      "nearest_other_receptor_atom": "('A', 235, 'ILE', 'HD13')",
+      "nearest_MYC_atom_A": 3.2312537142937967,
+      "HE2_xyz_A": [
+        7.925566250108062,
+        18.163238027158595,
+        44.60857775601499
+      ]
+    },
+    "baseline_receptor_SHA256": "71bee218c2cfede049ad8254bc39b33cb7c916055c0355e17236a2227a3e52b4",
+    "new_PDB_SHA256": "617d0594aa1c17b89d44778ecc6a65a52cd9e9da03d50ad9c2a252fd576a664c",
+    "new_PDBQT_SHA256": "8f85706775f8750f4689b4c6e33b28623a302d40ebaaef278838e9541e1c5fd3",
+    "GLH_template_SHA256": "535dc75a2cc5db579a3114090c9ab1273892c556cb7cc1a850ce2c4cd57c7cde",
+    "PCA_template_SHA256": "2e7998469c394035edf8320598c7511baa513df14249372c829b9df09c6f7ed6",
+    "Glu233_charge_baseline": -1.0000000074505806,
+    "Glu233_charge_Glu233H": -7.450580596923828e-09,
+    "PDBQT_atom_count": 4841,
+    "PDBQT_HE2_type": "HD",
+    "Meeko_command": "mk_prepare_receptor --read_pdb Glu233H.pdb --write_pdbqt Glu233H.pdbqt --add_templates PCA_C_terminal_Meeko_0.8.0.json --set_template A:233=GLH",
+    "Vina_input_probe": "Reached deliberate zero-size-grid guard without scoring"
+  },
+  "Vina_executable_SHA256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "Vina_version": "1.2.7",
+  "Meeko_version": "0.8.0",
+  "RDKit_version": "2026.03.6",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "exhaustiveness": 64,
+  "num_modes": 20,
+  "energy_range_kcal_mol": 5.0,
+  "min_rmsd_A": 1.0,
+  "cpu_per_run": 1,
+  "box_center_A": [
+    13.44317391,
+    15.13530435,
+    39.43613043
+  ],
+  "box_size_A": [
+    26,
+    24,
+    28
+  ],
+  "MYC_heavy_atoms": 23,
+  "MYC_graph_automorphisms": 2,
+  "starting_pose": "Exact E64 independent randomized start per seed; crystal reference never a search input",
+  "limitations": "Provisional Glu233H; dry/no-NAG local model; standard Vina ion and fixed-water limits; MYC low occupancy."
+}

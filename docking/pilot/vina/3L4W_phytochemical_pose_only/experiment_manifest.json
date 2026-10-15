@@ -1,0 +1,149 @@
+{
+  "all_pose_csv": "docking/pilot/vina/3L4W_phytochemical_pose_only/all_pose_metrics.csv",
+  "all_pose_csv_sha256": "47e6050463e925a2b25a356f4811ef6204f876a9fbf489d88e075a918b18646a",
+  "combination_decisions": {
+    "LIG04/neutral_keto_reference/Asp542-": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG04/neutral_keto_reference/Asp542H(OD2)": {
+      "medoid_seed": 2202,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542-": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542-": {
+      "medoid_seed": 4404,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "medoid_seed": 4404,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG06/neutral_keto_reference/Asp542-": {
+      "medoid_seed": 2202,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG06/neutral_keto_reference/Asp542H(OD2)": {
+      "medoid_seed": 4404,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    }
+  },
+  "completed_runs": 40,
+  "confirmed_exit_zero_runs": 38,
+  "created_utc": "2026-10-13T21:15:49.869927+00:00",
+  "experiment": "3L4W mangiferin/quercetin pose-only pilot",
+  "failed_runs": 0,
+  "frozen_input_manifest_path": "data/metadata/vina_3L4W_pilot_input_manifest.csv",
+  "frozen_input_manifest_sha256": "58c41e3b863cf722677c6429e9af126465333479ee3f3f6c867ef77dd26740fa",
+  "input_validator_path": "scripts/validate_vina_3L4W_pilot_inputs.py",
+  "input_validator_sha256": "0ded565f2e3417e516b563b57f2127ec9902067294f4f881fb195d557e7b3121",
+  "meeko_version": "0.8.0",
+  "pose_rules": {
+    "clash": "receptor-ligand heavy distance <1.8 A OR van der Waals overlap >0.8 A; internal >=4-bond heavy distance <1.6 A",
+    "convergence": ">=4/5 rank1 per combination pocket+no severe clash+<=2 A unfitted core RMSD to within-state medoid",
+    "pocket": "all heavy inside box; core centroid <=6 A from MIG centroid; >=50% core atoms within 4 A of any MIG heavy atom"
+  },
+  "python_version": "3.12.10",
+  "rdkit_version": "2026.03.6",
+  "results_csv": "data/metadata/vina_3L4W_phytochemical_pilot_results.csv",
+  "results_csv_sha256": "3013ea034a710d23e043e4288caf98d7a78266fa9fc7a505e6a1330912145c47",
+  "returned_poses": 781,
+  "script_path": "scripts/run_vina_3L4W_phytochemical_pilot.py",
+  "script_sha256": "b17b9464ef74b9609813bde81b685644a5b53b4ec034a013ed0236edb13c2061",
+  "settings": {
+    "box_center_A": [
+      45.38664286,
+      92.35157143,
+      34.822
+    ],
+    "box_size_A": [
+      24.0,
+      18.0,
+      18.0
+    ],
+    "concurrent_processes": 4,
+    "cpu_per_run": 1,
+    "energy_range": 5.0,
+    "exhaustiveness": 64,
+    "min_rmsd": 1.0,
+    "num_modes": 20,
+    "scoring": "vina",
+    "seeds": [
+      1101,
+      2202,
+      3303,
+      4404,
+      5505
+    ]
+  },
+  "source_input_sha256": {
+    "LIG04/neutral_keto_reference/Asp542-": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "8f2595814752bd9015b45854e241d78d06fb12a94dba1b819eef3c4ccc34678b",
+      "receptor": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "178a52b208a492eae7fc04db6c9579426be49e92d30c51f56a32ea9a09c1f534"
+    },
+    "LIG04/neutral_keto_reference/Asp542H(OD2)": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "8f2595814752bd9015b45854e241d78d06fb12a94dba1b819eef3c4ccc34678b",
+      "receptor": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "178a52b208a492eae7fc04db6c9579426be49e92d30c51f56a32ea9a09c1f534"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542-": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "4290a768b06dd86022b151de8e227e9038a537b1a5566a54ff0d8101774232ab",
+      "receptor": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "178a52b208a492eae7fc04db6c9579426be49e92d30c51f56a32ea9a09c1f534"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "4290a768b06dd86022b151de8e227e9038a537b1a5566a54ff0d8101774232ab",
+      "receptor": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "178a52b208a492eae7fc04db6c9579426be49e92d30c51f56a32ea9a09c1f534"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542-": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "1d9b53a79d5a3529398063b4249010f82c7418542cf04cffe72280861d2edf2d",
+      "receptor": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "aad6f102775cb6076bc26abc7ef50717255f8da6ad1fc2f10379c7e53b4d6362"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "1d9b53a79d5a3529398063b4249010f82c7418542cf04cffe72280861d2edf2d",
+      "receptor": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "aad6f102775cb6076bc26abc7ef50717255f8da6ad1fc2f10379c7e53b4d6362"
+    },
+    "LIG06/neutral_keto_reference/Asp542-": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "d310990fd8415a7936339514843b4f5fd1360b231c146745eb6a8150bf1a903f",
+      "receptor": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+      "source_sdf": "aad6f102775cb6076bc26abc7ef50717255f8da6ad1fc2f10379c7e53b4d6362"
+    },
+    "LIG06/neutral_keto_reference/Asp542H(OD2)": {
+      "MIG_reference": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+      "ligand": "d310990fd8415a7936339514843b4f5fd1360b231c146745eb6a8150bf1a903f",
+      "receptor": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd",
+      "source_sdf": "aad6f102775cb6076bc26abc7ef50717255f8da6ad1fc2f10379c7e53b4d6362"
+    }
+  },
+  "start_method": "NumPy PCG64 SeedSequence(seed, PubChem CID, charge code); independent random unit quaternion; translation in [-3,3] A with norm >=2 A; all heavy atoms inside box with >=0.5 A margin; same ligand start in both receptor states",
+  "validated_output_exit_unconfirmed_runs": 2,
+  "vina_executable": "E:\\docking tools\\vina_1.2.7_win.exe",
+  "vina_executable_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "vina_version": "1.2.7"
+}

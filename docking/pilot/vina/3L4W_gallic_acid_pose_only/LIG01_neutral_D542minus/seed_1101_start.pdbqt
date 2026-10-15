@@ -1,0 +1,34 @@
+REMARK SMILES O=C(O)c1cc(O)c(O)c(O)c1
+REMARK SMILES IDX 5 1 4 2 12 3 10 4 8 5 6 6 2 7 1 8 3 9 7 11 9 13 11 15
+REMARK H PARENT 3 10 7 12 9 14 11 16
+REMARK INDEX MAP 1 1 2 2 3 3 4 4 5 5 6 6 10 7 11 8 12 9 18 10 7 11 15 12 8 13
+REMARK INDEX MAP 16 14 9 15 17 16
+ROOT
+ATOM      1  C   UNL     1      43.193  90.930  33.173  1.00  0.00    +0.066 A 
+ATOM      2  C   UNL     1      44.205  91.908  33.130  1.00  0.00    +0.067 A 
+ATOM      3  C   UNL     1      44.744  92.315  31.900  1.00  0.00    +0.066 A 
+ATOM      4  C   UNL     1      44.265  91.743  30.728  1.00  0.00    +0.162 A 
+ATOM      5  C   UNL     1      43.267  90.778  30.769  1.00  0.00    +0.200 A 
+ATOM      6  C   UNL     1      42.732  90.373  31.986  1.00  0.00    +0.162 A 
+ENDROOT
+BRANCH   2   7
+ATOM      7  C   UNL     1      44.671  92.479  34.415  1.00  0.00    +0.335 C 
+ATOM      8  O   UNL     1      44.251  92.173  35.515  1.00  0.00    -0.246 OA
+BRANCH   7   9
+ATOM      9  O   UNL     1      45.636  93.400  34.262  1.00  0.00    -0.478 OA
+ATOM     10  H   UNL     1      45.846  93.688  35.175  1.00  0.00    +0.297 HD
+ENDBRANCH   7   9
+ENDBRANCH   2   7
+BRANCH   6  11
+ATOM     11  O   UNL     1      41.752  89.420  31.965  1.00  0.00    -0.504 OA
+ATOM     12  H   UNL     1      41.477  89.240  32.882  1.00  0.00    +0.293 HD
+ENDBRANCH   6  11
+BRANCH   5  13
+ATOM     13  O   UNL     1      42.818  90.235  29.596  1.00  0.00    -0.502 OA
+ATOM     14  H   UNL     1      42.131  89.594  29.873  1.00  0.00    +0.293 HD
+ENDBRANCH   5  13
+BRANCH   4  15
+ATOM     15  O   UNL     1      44.786  92.137  29.529  1.00  0.00    -0.504 OA
+ATOM     16  H   UNL     1      44.303  91.606  28.863  1.00  0.00    +0.293 HD
+ENDBRANCH   4  15
+TORSDOF 5

@@ -1,0 +1,31 @@
+{
+  "command": [
+    "E:\\docking tools\\vina_1.2.7_win.exe",
+    "--receptor",
+    "E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542H_OD2_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt",
+    "--ligand",
+    "E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\docking\\pilot\\vina\\3L4W_phytochemical_pose_only\\LIG04_neutral_D542H_OD2\\seed_1101_start.pdbqt",
+    "--center_x",
+    "45.38664286",
+    "--center_y",
+    "92.35157143",
+    "--center_z",
+    "34.82200000",
+    "--size_x",
+    "30",
+    "--size_y",
+    "24",
+    "--size_z",
+    "24",
+    "--scoring",
+    "vina",
+    "--score_only",
+    "--cpu",
+    "1"
+  ],
+  "return_code": 0,
+  "elapsed_seconds": 2.583,
+  "stdout": "AutoDock Vina v1.2.7\n#################################################################\n# If you used AutoDock Vina in your work, please cite:          #\n#                                                               #\n# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #\n# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #\n# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #\n# DOI 10.1021/acs.jcim.1c00203                                  #\n#                                                               #\n# O. Trott, A. J. Olson,                                        #\n# AutoDock Vina: improving the speed and accuracy of docking    #\n# with a new scoring function, efficient optimization and       #\n# multithreading, J. Comp. Chem. (2010)                         #\n# DOI 10.1002/jcc.21334                                         #\n#                                                               #\n# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #\n# more information.                                             #\n#################################################################\n\nScoring function : vina\nRigid receptor: E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\structures\\proteins\\vina_prepared\\3L4W_noNAG_D443m_D542H_OD2_H600HID_pH6p5_dry_sensitivity_Meeko0.8.0.pdbqt\nLigand: E:\\Polyherbal_Antioxidant_Antidiabetic_InSilico\\docking\\pilot\\vina\\3L4W_phytochemical_pose_only\\LIG04_neutral_D542H_OD2\\seed_1101_start.pdbqt\nGrid center: X 45.3866 Y 92.3516 Z 34.822\nGrid size  : X 30 Y 24 Z 24\nGrid space : 0.375\nExhaustiveness: 8\nCPU: 1\nVerbosity: 1\n\nComputing Vina grid ... done.\nEstimated Free Energy of Binding   : 221.254 (kcal/mol) [=(1)+(2)+(3)-(4)]\n(1) Final Intermolecular Energy    : 298.862 (kcal/mol)\n    Ligand - Receptor              : 298.862 (kcal/mol)\n    Ligand - Flex side chains      : 0.000 (kcal/mol)\n(2) Final Total Internal Energy    : -0.541 (kcal/mol)\n    Ligand                         : -0.541 (kcal/mol)\n    Flex   - Receptor              : 0.000 (kcal/mol)\n    Flex   - Flex side chains      : 0.000 (kcal/mol)\n(3) Torsional Free Energy          : -77.607 (kcal/mol)\n(4) Unbound System's Energy        : -0.541 (kcal/mol)\n",
+  "stderr": "",
+  "purpose": "grid and input parse only; score uninterpreted"
+}

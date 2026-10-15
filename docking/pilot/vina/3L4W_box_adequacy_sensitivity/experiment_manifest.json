@@ -1,0 +1,93 @@
+{
+  "all_pose_csv": "docking/pilot/vina/3L4W_box_adequacy_sensitivity/all_pose_metrics.csv",
+  "all_pose_csv_sha256": "e1cb7166c1c096f746a4f45a6afc42bb3e6ef9862bc65a11433233ad7e0d7f7b",
+  "box_preregistration": "docking/pilot/vina/3L4W_box_adequacy_sensitivity/box_pre_registration.json",
+  "box_preregistration_sha256": "3c6acbdecffc840adcde0ae4c721fc886d244967d4e94152e3f26f2c01261687",
+  "center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "comparison_face_audit_csv": "docking/pilot/vina/3L4W_box_adequacy_sensitivity/comparison_box_face_audit.csv",
+  "comparison_face_audit_sha256": "7c2d92621db6dca983feef20d0cb10b5dde85a3b02071e5c2f7f134727154e9b",
+  "confirmed_exit_zero_runs": 38,
+  "created_utc": "2026-10-14T09:07:52.764397+00:00",
+  "decisions": {
+    "LIG04/neutral_keto_reference/Asp542-": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG04/neutral_keto_reference/Asp542H(OD2)": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 3,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542-": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 4,
+      "status": "PASS"
+    },
+    "LIG04/xanthone_6_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542-": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG06/flavonol_4prime_OH_monoanion_hypothesis/Asp542H(OD2)": {
+      "medoid_seed": 4404,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG06/neutral_keto_reference/Asp542-": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG06/neutral_keto_reference/Asp542H(OD2)": {
+      "medoid_seed": 5505,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    }
+  },
+  "experiment": "Step 59 single preregistered larger-box comparison",
+  "failed_or_incomplete_runs": 0,
+  "frozen_input_manifest_sha256": "58c41e3b863cf722677c6429e9af126465333479ee3f3f6c867ef77dd26740fa",
+  "original_box_face_audit": "docking/pilot/vina/3L4W_box_adequacy_sensitivity/original_box_face_audit.csv",
+  "original_box_face_audit_sha256": "90e0a14f5bc770cd5542cbaf93f9ca21b914d1de987a453fc87b47048fb5f948",
+  "original_pose_metrics_sha256": "47e6050463e925a2b25a356f4811ef6204f876a9fbf489d88e075a918b18646a",
+  "original_results_sha256": "3013ea034a710d23e043e4288caf98d7a78266fa9fc7a505e6a1330912145c47",
+  "preserved_initial_failed_attempts": 14,
+  "results_csv": "data/metadata/vina_3L4W_box_adequacy_results.csv",
+  "results_csv_sha256": "ac2e42ae0aee87604424e72d92b1e19a2522c779e45e86e43fef1b3f9df687e3",
+  "returned_poses": 798,
+  "script": "scripts/assess_vina_3L4W_box_adequacy.py",
+  "script_sha256": "7e6fb85fabc12961da38bddcdcd2bc0d61ed0da54d223ed74cfa54d46559c54b",
+  "settings": {
+    "cpu": 1,
+    "energy_range": 5.0,
+    "exhaustiveness": 64,
+    "min_rmsd": 1.0,
+    "num_modes": 20,
+    "scoring": "vina",
+    "seeds": [
+      1101,
+      2202,
+      3303,
+      4404,
+      5505
+    ]
+  },
+  "size_A": [
+    30.0,
+    24.0,
+    24.0
+  ],
+  "start_method": "Exact byte copies of the 40 hash-verified Step 58 randomized starts",
+  "validated_output_exit_unconfirmed_runs": 2,
+  "vina_executable_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5"
+}

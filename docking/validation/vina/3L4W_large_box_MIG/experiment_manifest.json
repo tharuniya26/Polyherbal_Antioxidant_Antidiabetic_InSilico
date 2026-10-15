@@ -1,0 +1,55 @@
+{
+  "step": 60,
+  "created_UTC": "2026-10-14T18:12:48.804147+00:00",
+  "purpose": "neutral native MIG pose recovery in one preregistered enlarged box",
+  "box_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "box_size_A": [
+    30,
+    24,
+    24
+  ],
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "settings": {
+    "scoring": "vina",
+    "exhaustiveness": 64,
+    "num_modes": 20,
+    "energy_range": 5.0,
+    "min_rmsd": 1.0,
+    "cpu": 1
+  },
+  "vina_version": "1.2.7",
+  "vina_executable_SHA256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "frozen_step57_manifest_SHA256": "58c41e3b863cf722677c6429e9af126465333479ee3f3f6c867ef77dd26740fa",
+  "receptor_SHA256": {
+    "Asp542-": "7a76e0fa3b7bf2197714a57a88c60d2f4eefedccb18636951f3f643473afadf3",
+    "Asp542H(OD2)": "220e3585558e4bc261e6e76ddb036738dea827543e1b135399506e95ea9f93fd"
+  },
+  "ligand_SHA256": "c7417f6bcb661e0f2217c6ba3619b6fd6c03ffb029fe5840d4b0d13c1bf16169",
+  "reference_SHA256": "ea673a59043bea05abbe7d66d8bd29c3786021f564c394027a8b0201385503f7",
+  "bridge_map_SHA256": "68c9254203234c64557de148d64e161e2a4cf972c3f1e156e3b9658a0c8fcd50",
+  "deposited_map_SHA256": "ff1c77265befde60237c5a1fc129172b40620c9f45beeb264679f25180729df9",
+  "old_E64_result_SHA256": {
+    "Asp542-": "38d7152817a13327d188a92133a9185376d2927700b09a762f41c459977a8e76",
+    "Asp542H(OD2)": "84582ede5d94a1710459901f36655f1f5bd80a8aafabab3a57fd49922f6a9029"
+  },
+  "old_seeded_start_SHA256": {
+    "1101": "7beb42b159d1dc7ade8f004e435daa0792d794345450c2fb65a6a754bfb82442",
+    "2202": "759aa91ceac1da0bbc6d599f08a0e92947f1b6cdd3191bee29d521245895874c",
+    "3303": "4dcc75be621850b726da5c8e51c30455d078189cdeae61847bcc19e8a9504b9b",
+    "4404": "6ab18525e00d156a70cb4358b038b89ca48649d8f36dc1c8bc5547283a2bb467",
+    "5505": "495aded523ba9b29c7bff0f65472b2fdc361a573b94543100afef6040dd110ea"
+  },
+  "starting_pose_method": "Recompute audited NumPy PCG64(seed) quaternion rigid rotation plus translation using original 24x18x18 constraint; require >=5 A crystal-frame RMSD and byte identity with archived E64 start. Copy identical randomized PDBQT per receptor into new experiment. Vina then performs seeded global search.",
+  "RMSD_method": "Audited 14-heavy-atom map and graph automorphisms, deposited crystal frame, no independent pose fit; Meeko/RDKit graph, stereo and bond-geometry readback per returned mode",
+  "model_limitations": "Both receptors dry/no-NAG; provisional Asp542 and His600 protonation; fixed-water and glycan effects unresolved; Vina score ordering is not affinity validation"
+}
