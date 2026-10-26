@@ -1,0 +1,17 @@
+# Frozen docking provenance uses byte-level SHA256 records.  Preserve the
+# line-ending conventions under which those records were created on Windows.
+*.csv text eol=crlf
+*.json -text
+*.pdbqt text eol=crlf
+*.sdf text eol=crlf
+
+# Prepared inputs, deterministic starts, and crystallographic references were
+# recorded with LF bytes; do not let core.autocrlf rewrite them.
+structures/ligands/vina_prepared/** -text
+structures/proteins/vina_prepared/** text eol=crlf
+docking/**/*_start.pdbqt -text
+docking/validation/vina/*.sdf -text
+
+# Generated docking outputs and source SDF collections retain CRLF explicitly.
+docking/**/*_docked.pdbqt text eol=crlf
+structures/ligands/prepared/*.sdf text eol=crlf

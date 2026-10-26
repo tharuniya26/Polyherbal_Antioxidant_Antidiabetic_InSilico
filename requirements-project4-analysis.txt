@@ -1,0 +1,18 @@
+-c constraints-project4-py312-windows.txt
+
+# Direct scientific dependencies used by the archived preparation, validation,
+# and analysis scripts.  The final five-plant summary generator itself uses
+# only the Python standard library.
+colorama
+gemmi
+meeko
+numpy
+OpenMM
+pdbfixer
+Pillow
+propka
+PyYAML
+rdkit
+scipy
+tqdm
+
