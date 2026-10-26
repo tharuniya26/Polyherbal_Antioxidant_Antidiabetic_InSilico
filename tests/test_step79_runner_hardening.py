@@ -23,6 +23,8 @@ behavior, output = sys.argv[1:3]
 if behavior == "success":
     Path(output).write_text("MODEL 1\\nREMARK MOCK NON-SCIENTIFIC\\nENDMDL\\n", encoding="utf-8")
     raise SystemExit(0)
+if behavior == "success_no_output":
+    raise SystemExit(0)
 if behavior == "nonzero":
     print("mock failure", file=sys.stderr)
     raise SystemExit(7)
@@ -66,9 +68,31 @@ class RunnerHardeningTests(unittest.TestCase):
         job = self.job()
         result = runner.run_one(job, timeout_seconds=5)
         self.assertEqual(result["status"], "completed")
+        self.assertEqual(result["error"], "")
+        original = job["output"].read_bytes()
+
+        def forbidden_popen(*args, **kwargs):
+            raise AssertionError("verified completed job must not be started again")
+
+        repeated = runner.run_one(job, timeout_seconds=5, popen_factory=forbidden_popen)
+        self.assertEqual(repeated["status"], "completed")
+        self.assertEqual(repeated["error"], "")
+        self.assertEqual(job["output"].read_bytes(), original)
+        self.assertEqual(len(list(job["folder"].glob("seed_1101_attempt_*.json"))), 1)
         classified = runner.classify_job(job)
         self.assertEqual(classified["classification"], "REUSE")
         self.assertIn("MOCK NON-SCIENTIFIC", job["output"].read_text(encoding="utf-8"))
+
+    def test_zero_exit_without_output_records_error(self) -> None:
+        job = self.job("success_no_output")
+        result = runner.run_one(job, timeout_seconds=5)
+        self.assertEqual(result["status"], "vina_failed")
+        self.assertEqual(result["exit_code"], 0)
+        self.assertEqual(result["error"], "Vina returned success without an output")
+        self.assertFalse(job["output"].exists())
+        classified = runner.classify_job(job)
+        self.assertEqual(classified["classification"], "BLOCKED")
+        self.assertIn("successful attempt record has no output", classified["reason"])
 
     def test_nonzero_exit_is_finalized_and_not_reused(self) -> None:
         job = self.job("nonzero")

@@ -1,0 +1,69 @@
+{
+  "MIG_control_sha256": "9626a145b87c6429e15fd352c53add96e31c9bdb4a3ec3fccc9d058bee7fed09",
+  "all_pose_csv": "docking/pilot/vina/3L4W_alternative_ligands_pose_only/all_pose_metrics.csv",
+  "all_pose_csv_sha256": "d9f7a4a092c224a3fb8e3f2bfba34be283da02ca10c8dcedfcb172921ec29dbe",
+  "box_center_A": [
+    45.38664286,
+    92.35157143,
+    34.822
+  ],
+  "box_size_A": [
+    30.0,
+    24.0,
+    24.0
+  ],
+  "completed_runs": 20,
+  "cpu": 1,
+  "decisions": {
+    "LIG02/Asp542-": {
+      "medoid_seed": 3303,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG02/Asp542H(OD2)": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 0,
+      "status": "INCONCLUSIVE"
+    },
+    "LIG08/Asp542-": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    },
+    "LIG08/Asp542H(OD2)": {
+      "medoid_seed": 1101,
+      "passing_rank1_of_5": 5,
+      "status": "PASS"
+    }
+  },
+  "energy_range": 5.0,
+  "exhaustiveness": 64,
+  "exit_unconfirmed_runs": 0,
+  "experiment": "Step 73 neutral rutin/luteolin reference pose-only",
+  "failed_runs": 0,
+  "frozen_input_manifest": "data/metadata/project4_alternative_ligand_input_manifest.csv",
+  "frozen_input_manifest_sha256": "a192cb3a7f6bf68bf1b55bd03dce849955e1b9d374ed42ea60741477d981106d",
+  "max_parallel_processes": 2,
+  "min_rmsd": 1.0,
+  "num_modes": 20,
+  "original_pdb_waters_sha256": "57638e45666e2f848e37691a914a978d85c377c13eaed9e5f94af24d2c52c95e",
+  "preflight": "docking/pilot/vina/3L4W_alternative_ligands_pose_only/vina_pair_parse_preflight.json",
+  "preflight_sha256": "ab72784ce84bdf01f23b5f50fd429f5a17e9d60ae0948335c88c4ed61bf7f6ea",
+  "returned_modes": 398,
+  "run_csv": "data/metadata/vina_3L4W_alternative_ligand_pilot_results.csv",
+  "run_csv_sha256": "add509fd76de7ee201596aa563179ac4066cf75825d4a3e4a4e732f483d5b4a3",
+  "scoring": "vina",
+  "script": "scripts/run_vina_3L4W_alternative_ligand_pilot.py",
+  "script_sha256": "605da08ad21e00edee44b402d903694c54e0e8b7602d7139876abd1fcc209343",
+  "seeds": [
+    1101,
+    2202,
+    3303,
+    4404,
+    5505
+  ],
+  "validator_sha256": "5f642cd3243c19d3ba71ddecc4a11ecef09b0176df69fb33f7c7f32cd7db8286",
+  "vina_path": "E:\\docking tools\\vina_1.2.7_win.exe",
+  "vina_sha256": "e0c4b2715e0c1a74f6e92d0f3be0328ac97542eafbc111e6b1efad897a73cce5",
+  "vina_version": "1.2.7"
+}

@@ -515,8 +515,12 @@ def run_one(job: dict, session: SessionLog | None = None,
         try:
             stdout, stderr = process.communicate(timeout=timeout_seconds)
             exit_code = process.returncode
-            status = "completed" if exit_code == 0 and job["output"].is_file() else "vina_failed"
-            error = stderr.strip() or ("Vina returned success without an output" if exit_code == 0 else "")
+            output_exists = job["output"].is_file()
+            status = "completed" if exit_code == 0 and output_exists else "vina_failed"
+            error = stderr.strip() or (
+                "Vina returned success without an output"
+                if exit_code == 0 and not output_exists else ""
+            )
         except subprocess.TimeoutExpired:
             process.kill()
             stdout, stderr = process.communicate()

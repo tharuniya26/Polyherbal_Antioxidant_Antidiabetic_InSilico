@@ -20,7 +20,30 @@ For every returned mode, Meeko/RDKit reconstruction checks molecular graph, form
 
 ## Run outcomes and decision
 
-Results pending completion of the frozen searches. The [run table](../../data/metadata/vina_3L4W_alternative_ligand_pilot_results.csv) and [all-pose table](../../docking/pilot/vina/3L4W_alternative_ligands_pose_only/all_pose_metrics.csv) will provide the per-seed and per-mode audit trail, with raw PDBQT outputs, process logs and hashes under the same output directory.
+The resumed session finished normally at **2026-10-20T09:46:44.603Z**. All **20/20** planned searches have an output PDBQT, one finalized attempt JSON, exit code 0, a matching output SHA256, the exact frozen receptor/start/seed/box/search settings, and complete consecutive `MODEL`/`ENDMDL` records. Vina returned **398** modes: 20 for 18 searches and 19 for luteolin/Asp542− seed 3303 and luteolin/Asp542H(OD2) seed 4404. Returning fewer than the requested maximum within the fixed energy and separation filters is not an incomplete file. There are **0 missing, 0 failed and 0 blocked searches**. The eight rutin outputs and eight attempt records present at checkpoint `a553890` remain content-identical to that checkpoint; Git object comparison confirms the outputs after normalizing the expected LF/CRLF checkout difference. The session reused those eight records, launched the remaining twelve searches, recorded twelve zero-exit completions and ended with `status: completed`; no Vina or Step 73 runner process remained at the completion audit.
+
+| Compound / receptor state | Rank-1 pocket members | Severe clashes | Full geometric passes | Medoid seed | Rank-1 core RMSD to medoid (Å) | Rank-1 Vina score, mean ± SD (range), kcal/mol | Decision |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| Rutin / Asp542− | 1/5 | 0/5 | **0/5** | 3303 | 0.0000–10.9953 | −8.756 ± 0.223 (−9.097 to −8.509) | **INCONCLUSIVE** |
+| Rutin / Asp542H(OD2) | 1/5 | 0/5 | **0/5** | 1101 | 0.0000–11.1674 | −8.944 ± 0.344 (−9.428 to −8.512) | **INCONCLUSIVE** |
+| Luteolin / Asp542− | 5/5 | 0/5 | **5/5** | 1101 | 0.0000–0.0592 | −7.948 ± 0.003 (−7.951 to −7.945) | **PASS** |
+| Luteolin / Asp542H(OD2) | 5/5 | 0/5 | **5/5** | 1101 | 0.0000–0.0295 | −8.174 ± 0.007 (−8.181 to −8.165) | **PASS** |
+
+### Rutin
+
+Only seed 2202 is a rank-1 pocket member in either receptor state, and that pose lies **8.5422 Å** or **8.6688 Å** from the within-state medoid core. The other rank-1 poses are outside the frozen MIG-pocket rule. Both receptor conditions therefore remain **INCONCLUSIVE 0/5**; the threshold was not relaxed. The 200 rutin modes contain **44** pocket members, of which **42** are lower-ranked alternatives (22 with Asp542− and 20 with Asp542H). No rutin mode triggers the frozen severe-clash screen. Rank-1 box-face warnings occur in 3/5 runs for each state, with minimum margins **0.403 Å** and **0.309 Å**. Four of five rank-1 poses in each state approach a deposited crystallographic-water oxygen within **1.8 Å**; across all modes, the counts are 87/100 and 86/100. These water overlaps concern waters omitted from the dry Vina receptors and do not retroactively change the rule, but they materially limit structural interpretation.
+
+The rutin medoid cores differ by only **0.2436 Å** between receptor states, and matched-seed cross-state core RMSDs span **0.0324–0.2734 Å**. Thus changing the Asp542 hypothesis does not rescue the rank-1 pocket result. The higher numerical magnitude of the rutin Vina scores is not evidence of stronger binding, potency or biological activity, especially because the top-ranked poses do not satisfy the prespecified pocket/convergence screen.
+
+### Luteolin
+
+All ten luteolin rank-1 poses are pocket members, have no severe clash and meet the symmetry-aware medoid threshold, giving **PASS 5/5** for each receptor state. The maximum within-state core RMSD is **0.0592 Å** for Asp542− and **0.0295 Å** for Asp542H(OD2). Minimum box-face margins are **4.355 Å** and **4.320 Å**, with no rank-1 face warning. No rank-1 pose approaches a deposited water oxygen within 1.8 Å. The medoid cores differ by **0.1166 Å** between receptor states and matched-seed cross-state RMSDs span **0.0836–0.1376 Å**, so the computed placement is geometrically stable across these two prepared receptor hypotheses. Lower-ranked pocket members remain common (75/94 lower ranks with Asp542− and 82/94 with Asp542H), but they do not replace the rank-1 decision.
+
+The Asp542H(OD2) rank-1 scores average about **0.226 kcal/mol** lower than the Asp542− scores. This is a descriptive output difference, not a free-energy estimate and not evidence that one protonation state is biological. The geometric PASS supports only a reproducible computed placement in these frozen dry/no-NAG models.
+
+### Derived-record audit note
+
+The [run table](../../data/metadata/vina_3L4W_alternative_ligand_pilot_results.csv), [all-pose table](../../docking/pilot/vina/3L4W_alternative_ligands_pose_only/all_pose_metrics.csv) and [experiment manifest](../../docking/pilot/vina/3L4W_alternative_ligands_pose_only/experiment_manifest.json) exist and their recorded SHA256 links reconcile. A Step 83 audit independently rechecked all 12 affected searches before clearing the false text `Vina returned success without an output` from only their derived run-table `error` cells. The corrected run-table SHA256 is `add509fd76de7ee201596aa563179ac4066cf75825d4a3e4a4e732f483d5b4a3` (previously `71f114f54047a7f8cc21ad9d7626e850f895e2e634150c4495011b36f87aec79`), and the manifest now records the corrected hash. The all-pose table remains byte-identical at SHA256 `d9f7a4a092c224a3fb8e3f2bfba34be283da02ca10c8dcedfcb172921ec29dbe`; frozen output PDBQTs and attempt JSONs were not changed. The runner now emits that fallback only when a zero-exit process genuinely lacks its required output, with mock-process regression tests covering successful output, missing output, hash integrity, write-once behavior and completed-job reuse.
 
 ## Scientific boundary
 
