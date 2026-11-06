@@ -30,11 +30,11 @@ The [final preliminary library](data/compounds/final_preliminary_ligand_library.
 
 | Plant | Selected reference(s) and occurrence boundary | 3L4W status |
 | --- | --- | --- |
-| *Aegle marmelos* | Gallic acid and rutin reported from **ethanol-extracted leaves**; a separate kaempferol-rutinoside assignment remains identity-unresolved. | Gallic acid tested; all four neutral/carboxylate × receptor conditions **INCONCLUSIVE**. Rutin and tentative glycoside untested. |
-| *Boerhavia diffusa* | Underivatized caffeic acid reported from a boiled-water **mixed-aerial-part** infusion; methanolic-leaf GC-MS identified a **tri-TMS derivative**. Source E/Z geometry and isolated aqueous-leaf identity are unresolved. | Trans-caffeic-acid PubChem reference **on botanical/isomer HOLD; not docked**. |
+| *Aegle marmelos* | Gallic acid and rutin reported from **organic or hydroalcoholic leaf extracts**; a separate kaempferol-rutinoside assignment remains identity-unresolved. | Gallic acid (four ligand/receptor conditions) and rutin (two receptor conditions) were tested; all six are **INCONCLUSIVE**. |
+| *Boerhavia diffusa* | Quercetin has a published boiled-water **leaf** HPLC-DAD assignment with analytical qualification; the same reference structure is also associated with *Senna*. Earlier caffeic-acid evidence remains botanically/isomerically qualified. | Uses the same quercetin molecular experiment as *Senna*; it is not a second docking experiment. Only the modelled 4′-O monoanion/Asp542H conditions passed. |
 | *Salacia reticulata* | Mangiferin has compound-specific published **water-leaf** HPLC evidence. Hot-water leaves support epicatechin at the compound level, without proof of the exact PubChem optical isomer. | Mangiferin neutral and 6-O monoanion tested; results depend on receptor state and box. Epicatechin untested. |
-| *Senna auriculata* | Quercetin, kaempferol, luteolin, rutin and nicotiflorin have leaf literature using **80% aqueous acetone and fractions**, not water-only leaf identification. | Quercetin neutral and 4′-O monoanion tested; only the monoanion/Asp542H model met the geometric screen in both boxes. Other references untested. |
-| *Vitex negundo* | Agnuside has leaf occurrence evidence, but full water-only chromatographic details and source-specific stereochemistry remain unresolved; methanol-first aqueous partition is a different extraction method. | Neutral PubChem agnuside reference tested; both receptor conditions **INCONCLUSIVE**. |
+| *Senna auriculata* | Quercetin, kaempferol, luteolin, rutin and nicotiflorin have leaf literature using **80% aqueous acetone and fractions**, not water-only leaf identification. | The shared quercetin experiment tested neutral and 4′-O monoanion states; only the monoanion/Asp542H model met the geometric screen in both boxes. |
+| *Vitex negundo* | Agnuside leaf evidence has incomplete water-specific detail; luteolin is supported by organic-solvent leaf HPLC, not water-only extraction. | Agnuside was **INCONCLUSIVE** in both receptor conditions; neutral luteolin passed the geometric screen **5/5 in both receptor states**. |
 
 These are associations in **external publications**. A PubChem CID, prepared reference structure or docked pose does not identify a molecule in the original laboratory extract. The [literature reviews](literature/five_plant_compound_evidence_review.md) and [evidence corrections](docs/compound_evidence_corrections.md) document the source-specific boundaries.
 
@@ -69,6 +69,24 @@ The original box was **24 × 18 × 18 Å**; its face lay within 1 Å of **36/40 
 
 **Agnuside:** neutral PubChem CID 442416 yielded **INCONCLUSIVE 0/5** on both receptors. Thirteen lower-ranked modes occupied the frozen MIG pocket; all ten rank-1 poses and 12/13 pocket alternatives overlapped omitted deposited water oxygen positions. Five starting conformers were paired one-to-one with five seeds, so conformer and seed effects cannot be separated. See the [pilot report](docs/protocols/vina_3L4W_agnuside_pilot_report.md) and [structural investigation](docs/protocols/vina_3L4W_agnuside_structural_investigation.md).
 
+**Rutin and luteolin:** neutral rutin was **INCONCLUSIVE** in both receptor states (0/5 full rank-1 passes in each), with poor rank-1 pocket localization and convergence. Neutral luteolin passed **5/5** in both receptor states under the enlarged-box geometric screen. The contrast is condition-specific pose geometry, not a potency ranking. See the [alternative-ligand pilot report](docs/protocols/vina_3L4W_alternative_ligand_pilot_report.md).
+
+Across all six screened reference compounds, the preserved archive contains **130 analyzable candidate searches and 2,559 returned poses**. The deterministic final synthesis has **26 unique ligand-state/receptor-state/box conditions: 10 PASS and 16 INCONCLUSIVE**. Quercetin is shared by two botanical associations and is counted once computationally. Of the 130 searches, 126 have recorded exit zero; four complete, chemistry-checked mangiferin outputs retain unconfirmed historical process exits. The authoritative [26-row synthesis](data/metadata/project4_final_five_plant_docking_summary.csv) is regenerated by [`scripts/build_project4_final_five_plant_summary.py`](scripts/build_project4_final_five_plant_summary.py).
+
+## Manuscript and publication figures
+
+The supervisor-review manuscript is available as [Markdown](manuscript/project4_insilico_manuscript_draft.md) and as an [A4 PDF](manuscript/Tharuniya_Anpalakan_Polyherbal_Computational_Manuscript.pdf). It is a research draft, **not peer-reviewed, accepted or published**. Its scope is deliberately narrower than a complete experimental–computational article because the original dissertation, raw assay observations and analytical profiling of the project extracts are unavailable.
+
+Six publication figures and editable SVG versions are under [`results/figures/project4_manuscript/`](results/figures/project4_manuscript/). Their source hashes and non-cherry-picking selection rules are recorded in [`figure_provenance.csv`](results/figures/project4_manuscript/figure_provenance.csv). Rebuild them and the PDF with:
+
+```powershell
+python scripts/build_project4_manuscript_figures.py
+python scripts/build_project4_manuscript_pdf.py
+python -m pytest
+```
+
+The manuscript environment is declared in [`requirements-project4-manuscript.txt`](requirements-project4-manuscript.txt) with tested Windows/Python constraints in [`constraints-project4-manuscript-py312-windows.txt`](constraints-project4-manuscript-py312-windows.txt). The PDF builder uses a Unicode Times New Roman font when available and produces numbered A4 pages with embedded figures, tables and live DOI links.
+
 ## Reproducing and inspecting the record
 
 The project virtual environment was used for the completed work. [`requirements.txt`](requirements.txt) currently pins **PyYAML only**; it is **not a complete docking-environment lockfile**. The archived reports record Vina 1.2.7, Meeko 0.8.0, RDKit/Gemmi usage, settings, seeds, commands and SHA256 values. Vina is a separate executable; CCDC GOLD and BIOVIA Discovery Studio were considered in planning but **no GOLD production docking, antioxidant quantum-chemical analysis, ADMET or molecular dynamics** is reported here. To inspect the YAML and CSV record without rerunning docking:
@@ -86,7 +104,8 @@ This installs only the declared dependency. Re-executing molecular preparation o
 | Literature evidence and selection | [`literature/`](literature/), [`data/compounds/`](data/compounds/), [five-plant evidence table](data/metadata/project4_five_plant_evidence_summary.csv) |
 | Ligand/receptor preparation, structures and metadata | [`structures/`](structures/), [`data/metadata/`](data/metadata/), [`scripts/`](scripts/) |
 | Frozen docking configurations, starts, output poses, process records and per-pose tables | [`docking/validation/vina/`](docking/validation/vina/), [`docking/pilot/vina/`](docking/pilot/vina/) |
-| Scientific interpretation and reproducibility reports | [`docs/protocols/`](docs/protocols/), [five-plant synthesis](docs/protocols/project4_five_plant_scientific_synthesis.md), [manuscript-readiness assessment](docs/protocols/project4_manuscript_readiness.md) |
+| Scientific interpretation and reproducibility reports | [`docs/protocols/`](docs/protocols/), [five-plant synthesis](docs/protocols/project4_five_plant_scientific_synthesis.md), [manuscript-readiness assessment](docs/protocols/project4_manuscript_readiness.md), [final validation summary](docs/protocols/project4_final_validation_summary.md) |
+| Supervisor-review manuscript and publication figures | [`manuscript/`](manuscript/), [`results/figures/project4_manuscript/`](results/figures/project4_manuscript/), [rendered PDF](manuscript/Tharuniya_Anpalakan_Polyherbal_Computational_Manuscript.pdf) |
 
 Run-level CSVs record input/output paths and hashes; experiment manifests and saved starts link each run to its exact chemistry and settings. Some Vina `.log` files are currently ignored by `.gitignore`; the [Git checkpoint audit](docs/protocols/project4_git_checkpoint_audit.md) identifies the files needed to back up the full provenance. The README describes files present in this working repository; GitHub completeness must be checked against that audit.
 

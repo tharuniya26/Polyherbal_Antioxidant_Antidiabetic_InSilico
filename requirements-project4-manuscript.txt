@@ -1,0 +1,7 @@
+-c constraints-project4-manuscript-py312-windows.txt
+-r requirements-project4-analysis.txt
+
+# Publication-figure rendering (not required for the archived docking analyses).
+matplotlib
+pytest
+reportlab

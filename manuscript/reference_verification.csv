@@ -1,0 +1,28 @@
+reference,doi_or_url,verification_status,verification_note
+1,10.1016/j.jmb.2007.10.069,VERIFIED,Crossref metadata and project target-selection record agree
+2,10.1007/s13238-011-1105-3,VERIFIED,Crossref metadata and project target-selection record agree
+3,10.1021/bi9016457,VERIFIED,Crossref metadata identifies the 3L4W-associated primary structural paper
+4,10.1002/jcc.21334,VERIFIED,Crossref metadata identifies the original AutoDock Vina paper
+5,10.1021/acs.jcim.1c00203,VERIFIED,Crossref metadata identifies AutoDock Vina 1.2.0 methods paper
+6,10.1038/nprot.2016.051,VERIFIED,Crossref metadata identifies the AutoDock suite protocol
+7,10.3390/molecules23081899,VERIFIED,Corrected and verified DOI for Pantsar and Poso; volume 23 issue 8 article 1899
+8,10.1021/ci800420z,VERIFIED,Crossref metadata identifies docking microstate study
+9,10.1021/jm050362n,VERIFIED,Crossref metadata identifies critical docking-program assessment
+10,10.3390/plants10122573,VERIFIED,Crossref metadata and primary botanical-evidence record agree
+11,10.1016/j.fct.2009.05.033,VERIFIED,Crossref metadata identifies Boerhaavia metabolite-profiling paper
+12,10.1002/pca.869,VERIFIED,Crossref metadata identifies Boerhaavia HPLC-PAD-MS/MS paper
+13,10.1271/bbb.80854,VERIFIED,Crossref metadata identifies Salacia leaf-extract paper
+14,10.1248/cpb.c14-00420,VERIFIED,Crossref metadata identifies Cassia auriculata leaf-constituent paper
+15,10.1007/s42250-022-00383-8,VERIFIED,Crossref metadata identifies negundoside and agnuside extraction paper
+16,10.1016/j.jpha.2013.09.008,VERIFIED,Crossref metadata identifies agnuside HPLC paper
+17,10.1016/S1995-7645(14)60248-0,VERIFIED,Crossref metadata identifies Vitex luteolin extraction-comparison paper
+18,10.1021/jm301273u,VERIFIED,Crossref metadata identifies the 4GQR-associated primary structural paper
+19,10.5281/zenodo.22140358,VERIFIED,DataCite metadata identifies the exact RDKit 2026_03_6 release used by the figure workflow
+20,10.1021/acs.jcim.5c02271,VERIFIED,Crossref metadata identifies the Meeko software paper and exact journal citation
+21,10.1016/j.toxrep.2018.09.005,VERIFIED,Crossref metadata identifies the Aegle marmelos LC-MS/MS constituent paper
+22,10.1016/j.saa.2005.09.009,VERIFIED,Crossref metadata identifies the mangiferin pKa study
+23,10.1002/chem.202001956,VERIFIED,Crossref metadata identifies the quercetin radical and acid-base study
+24,10.1039/D0RA09632F,VERIFIED,Crossref metadata identifies the quercetin acid-base equilibria paper
+25,10.1080/00032718508068758,VERIFIED,Crossref metadata identifies the gallate stability-constant study
+26,10.1021/ct100578z,VERIFIED,Crossref metadata identifies the PROPKA3 methods paper
+27,10.1371/journal.pcbi.1005659,VERIFIED,Crossref metadata identifies the OpenMM 7 methods paper

@@ -15,3 +15,9 @@ docking/validation/vina/*.sdf -text
 # Generated docking outputs and source SDF collections retain CRLF explicitly.
 docking/**/*_docked.pdbqt text eol=crlf
 structures/ligands/prepared/*.sdf text eol=crlf
+
+# Publication renders are generated binary artifacts.  Their editable sources
+# remain in Markdown, Python, CSV, and figure-provenance records.
+manuscript/*.pdf binary
+results/figures/project4_manuscript/*.png binary
+results/figures/project4_manuscript/*.svg binary
